@@ -1,0 +1,40 @@
+<!--
+    <robots.txt를 효과적으로 활용하기>
+    즉 robot에게 어떤 페이지는 크롤링할 수 있게하고 어떤 페이지는 크롤링 못하게끔
+    할 수 있다.
+
+    User-agent 란 일반 사용자가 아닌 로봇을 의미
+    User-agent: *
+    Disallow: /
+    는 www.naver.com/ 아래에 있는 모든 페이지는 로봇이 접근 불가능하게끔 함
+
+    따라서 Disallow는 검색될 필요가 없거나 타사에 정보가 넘어가면 불리한 것들
+    개인적인 정보들에 주로 이용되고
+    나머지는 Allow를 이용한다.
+
+    robots.txt를 보기 위해서는 해당 웹페이지의 뒷부분에 robots.txt를 입력해서
+    검색하면 된다.
+    www.naver.com/robots.txt
+
+    robots.txt를 보안도구로 활용해서는 안된다. robots.txt는 정중한 부탁이지
+    매우 쉽게 뚫릴 수 있다.
+
+    www.naver.com/sitemap 의 경우, 해당 웹페이지의 모든 링크 구조에 대해
+    기계가 쉽게 이해할 수 있기위해 XML 형태로 보여준다.
+    즉, 사용자를 위한 사이트맵 뿐만 아니라 검색엔진을 위한 사이트맵 또한
+    XML 기반으로 사이트맵을 작성해주어야 한다.
+
+    이후 robots.txt에
+    Sitemap: /sitemap 을 작성해준다.
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://opentutorials.org/1.html</loc>
+    </url>
+    <url>
+        <loc>http://opentutorials.org/2.html</loc>
+    </url>
+</urlset>

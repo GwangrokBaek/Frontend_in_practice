@@ -1,0 +1,38 @@
+<!--a태그는 링크 기능 제공. Anchor의 약자 이때 속성과 함께 사용한다.
+ 이때 href가 연결할 주소로 hypertext reference의 약자이다.
+ 주소는 다양하게 넣을 수 있음. 이때, <a>태그는 문자뿐 아니라, 이미지, <div>
+ 등에도 링크를 걸 수 있다.
+ <a href="http://google.com"><img src="main.png"/></a>
+ <a href="http://google.com"><div id="a">구글</div></a>
+
+ 1. 절대 URL (Uniform Resource Locator)
+ <a href="http://google.com">구글</a>
+
+ 2. 상대 URL (주로 같은 문서 내에서 링크 만들 때 이용)
+ <a href="right.html">오른쪽 페이지로 이동</a>
+ <a href="../right.html">오른쪽 페이지로 이동</a>
+
+ 3. 다른 형식의 URL (ftp://, mailto:, file:)
+ <a href="mailto:zester926@gmail.com">Contact me</a>
+
+ 4. id를 이용한 URL (특히 같은 문서 내에서 가리키는 id)
+ <div id="top">ID를 이용한 URL</div> 라고 미리 id를 지정한 후,
+ <a href="#top">맨 위로 이동</a> 로 연결하여 해당 id로 이동
+ <a href="http://somthing.com/87#top"> 으로도 가능
+
+ target 속성은 링크를 클릭할 때 창을 어떻게 열지 결정
+ target="_blank" 는 새로운 창 띄워서 페이지 이동
+ _self 연결 문서를 클릭한 창에서 연다(기본값)
+ _parent 부모(상위 레벨)창에서 연다(부모가 없으면 _self처럼 표시)
+ _top 가장 상위 창에서 연다(즉 프레임을 무시, 부모가 없으면 _self처럼 표시)
+ frame name 지정된 프레임 안에서 연다
+
+
+
+ title은 마우스 포인터를 올렸을때 나타나는 설명-->
+<h1>
+    <a target="_blank" title="webpage" href="https://en.wikipedia.org/wiki/How_to_Sell_Drugs_Online_(Fast)">
+        Mydrugs
+    </a>
+</h1>
+How to sell drugs online <strong>fast</strong>

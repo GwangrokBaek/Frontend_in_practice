@@ -1,0 +1,15 @@
+<!-- iframe 은 웹 페이지 안에 다른 웹 페이지의 내용을 그대로 가져오는 기능을 수행한다.
+따라서 매우 편리하지만, 신뢰할 수 없는 사이트에서 악성코드 같은 것을 포함하고 있을때 삽입된 외부소스에서 악성코드가 실행될 수 있다.
+따라서 보안에 있어 상당히 취약하다. 이를 해소하기 위해 HTML5 에서 sandbox라는 것을 도입하였다. 이는 iframe 으로 삽입된
+웹페이지에서 자바스크립트 등이 실행되지 않도록 하는 방법이다. 이를 이용하기 위해서는 iframe 태그에서 sandbox 속성을 명시해주면 된다.
+자바스크립트 뿐만 아니라, form 태그 또한 악용될 수 있는데 sandbox 를 사용하면 form 태그에서 제출 버튼을 누르더라도 동작되지 않는다.
+하지만, 최신 HTML 을 지원하지 않는 오래된 브라우저에서는 해당 기능을 지원하지 않을 수 있다. -->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <iframe src="index.html" frameborder=0 sandbox></iframe>
+        <iframe src="http://opentutorials.org" frameborder=0 width=500 height=500></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6Y8PpdMb6BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </body>
+</html>

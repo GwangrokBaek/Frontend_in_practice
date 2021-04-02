@@ -1,0 +1,21 @@
+<!--
+    파일 업로드는 html 보다는 서버쪽 내용이 사실 더 많다.
+    
+    파일 업로드를 위해서는 반드시 form 속성에서 method는 post로
+    enctype은 multipart/form-data로 지정해주어야한다.
+    또한 파일 전송을 위한 input 태그에서 name 속성을 지정해주어야지 서버에서
+    해당 name을 통해 처리가 가능하다.
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="http://localhost/file.php"
+        method="post" enctype="multipart/form-data">
+            <input type="file" name="profile">
+            <input type="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!--
+    텍스트 입력기에 기본 값을 정해주고 싶은 경우 value 속성을 이용
+    한줄이 아닌 여러줄을 입력하고 싶은 경우 textarea 태그 이용
+    이때 textarea의 크기를 조절하고 싶은 경우 cols와 rows 속성 이용
+    textarea에 기본값을 입력하고 싶은 경우에는 태그 안쪽(컨텐츠)에 문자열을
+    적어주면 된다.
+-->
+<html>
+    <body>
+        <form action="">
+            <p>text: <input type="text" name="id" value="default value"></p>
+            <p>password: <input type="password" name="pwd" value="default value"></p>
+            <p>textarea:
+                <textarea cols="50" rows="2">default value</textarea>
+            </p>
+        </form>
+    </body>
+</html>

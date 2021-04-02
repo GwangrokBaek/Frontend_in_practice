@@ -1,0 +1,19 @@
+<!-- html5 에서 form 태그에 여러가지 속성이 추가되었다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="form.php" autocomplete="on">
+            <!-- form 태그에서 autocomplete 속성에 on 을 명시해주면 해당 form 태그 아래에 있는 모든 input 태그에서 자동 완성 기능을 제공해준다. -->
+            <input type="text" name="id" placeholder="id를 입력해주세요." autofocus><br>
+            <!-- placeholder 를 통해 해당 입력박스에 대한 힌트를 제공할 수 있고, autofocus 를 사용함으로써 페이지를 열었을때 autofocus 속성이 명시된
+            input 태그로 커서가 자동으로 위치하게 할 수 있다. -->
+            <input type="password" name="password" autocomplete="off" placeholder="비밀번호를 입력해주세요.">
+            <!-- 이때 특정 input 태그에서는 autocomplete 를 비활성화 해주고 싶다면, 해당 input 태그에서 autocomplete 속성에 off 를 명시해주면 된다. -->
+            <input type="submit">
+        </form>
+    </body>
+</html>

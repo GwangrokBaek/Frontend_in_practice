@@ -1,0 +1,76 @@
+<!--
+    semantic이란 '의미론적'이란 뜻
+    HTML5로 바뀌면서 의미론적 HTML을 더 부각시키기 위해 특별한 기능은 없지만
+    해당 태그 또는 내용에 대해 구조적 또는 기능적 정보로서의 의미를 강조하기
+    위해 시맨틱 태그가 나옴.
+
+    시맨틱 태그 목록
+    article 본문
+    aside 광고와 같이 페이지의 내용과는 관계가 적은 내용들
+    details 기본적으로 화면에 표시되지 않는 정보들을 정의
+    figure 삽화나 다이어그램과 같은 부가적인 요소를 정의
+    footer 화면의 하단에 위치하는 사이트나 문서의 전체적인 정보를 정의
+    header 화면의 상단에 위치하는 사이트나 문서의 전체적인 정보를 정의
+    main 문서에서 가장 중심이 되는 컨텐츠를 정의
+    mark 참조나 하이라이트 표시를 필요로 하는 문자를 정의
+    nav 문서의 네비게이션 항목을 정의
+    section 문서의 구획들을 정의
+    time 시간을 정의
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mydrugs</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- 아래 h1태그로 감싸져있는 부분은 웹페이지의 제목 즉 헤더이다. 따라서
+    헤더 태그로 감싸준다. 이때 header태그로 감싸더라도 아무런 변화가 없는데
+    코드에서 해당 부분이 웹페이지에서 제목 즉 중요한 의미를 가진다는 것을
+    보여주기 위한 의미론적 태그-->
+    <header>
+        <h1><a href="index.html">HTML</a></h1>
+    </header>
+    <!--이 페이지에 li나 ul ol 등이 여러차례 등장하지만 이 li들이 nav역할을
+    한다는 것을 의미론적으로 명시-->
+    <nav>
+        <ol>
+            <li><a href="a.html">blue pill</a></li>
+            <li><a href="b.html">red pill</a></li>
+            <li><a href="c.html">yellow pill</a></li>
+            <li><a href="d.html">purple pill</a></li>
+        </ol>
+    </nav>
+
+    <h2>선행학습</h2>
+
+    <!--header는 제목 등 헤더를 의미하는 섹션, footer는 문서 최하단 부분 즉,
+    footer를 의미하는 섹션, nav는 네비게이션 역할을 하는 부분을 의미하는 섹션
+    만약 해당 부분의 역할이 불분명할 경우 section 태그로 묶어준다.-->
+    <section>
+    <article>
+    abcd
+
+    efgh
+    </article>
+
+    <article>
+    <h2>Hellow</h2>
+    </article>
+    </section>
+
+    <!--보통 footer는 웹페이지 가장 하단부분에 회사 contact 정보나 개인보호정책
+    등을 기술하는데 이때 가장 아래에 위치하게 하는 디자인은 css를 이용한다.-->
+    <footer>
+        <!--ul 태그로 굳이 안감싸도 되지만 이는 개인보호정책과 회사소개 구문이
+        같은 계층의 의미를 지닌다는 것을 의미론적으로 명시해주는 것
+        -->
+        <ul>
+            <li><a href="privacy.html">개인보호정책</a></li>
+            <li><a href="about.html">회사소개</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

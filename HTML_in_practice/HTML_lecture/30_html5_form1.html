@@ -1,0 +1,31 @@
+<!-- html5 가 출시되면서 form 태그에 다양한 타입과 다양한 속성을 사용할 수 있게 되었다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="form.php">
+            <!-- number 타입은 숫자만을 입력할 수 있게끔 한다. 이때 영문자나 한글 등은 입력하지 못한다. number 타입의 속성으로 min 과 max 를 사용할 수 있는데,
+            이는 입력할 수 있는 숫자의 최솟값과 최댓값을 제한해주는 기능을 수행한다. 이때 number 와 같이 특정 텍스트만을 입력으로 받는 input 태그를 사용할 경우,
+            모바일 디바이스에서 해당 텍스트를 입력 받는 키보드를 띄워준다. 즉, number 타입의 경우 숫자 키보드를 띄워준다. 뿐만 아니라 제출 버튼도 같이 사용할 경우,
+            허용되지 않는 값을 입력하고 제출을 시도할 경우 경고 메시지를 띄우며 제출하지 못하게끔 한다. -->
+            <input type="number" min="10" max="15">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
+<!-- 이외에도 많은 타입들이 있다.
+color : 색상 선택
+date : 날짜 입력
+email : 이메일 입력
+month : 월 입력
+range : 숫자 범위 입력. 이때 사용자가 슬라이드를 움직이면서 숫자를 선택할 수 있게끔 표시
+search : 검색하는 입력창. 특별한 기능은 없지만, 시각장애인분들께서 검색기능을 찾을 경우 도움을 줄 수 있다.
+tel : 전화번호 입력
+time : 시간 입력
+url : url 링크 입력
+week : 주 입력 -->

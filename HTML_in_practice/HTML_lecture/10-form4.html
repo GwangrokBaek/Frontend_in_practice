@@ -1,0 +1,16 @@
+<!--
+submit 타입은 지정한 폼 스크립트로 이동을 하지만
+button 타입의 경우 아무런 동작을 하지 않는다. 이는 JS와 같이 사용될 때
+의미가 있어진다.
+-->
+<html>
+    <head><meta charset="utf-8"></head>
+    <body>
+        <form action="http://localhost/form.php">
+            <input type="text">
+            <input type="submit" value="전송">
+            <input type="button" value="버튼" onclick="alert('hello world')">
+            <input type="reset">
+        </form>
+    </body>
+</html>

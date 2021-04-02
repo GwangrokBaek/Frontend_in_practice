@@ -1,0 +1,87 @@
+<!--
+    meta는 데이터를 설명하는 것을 의미
+    웹페이지를 만들 시, 웹페이지 전체에 대해 설명해야할 경우가 있다.
+    (웹페이지 저자, 웹페이지 내용 요약, 웹페이지 검색 키워드 등)
+    이때 meta를 이용한다.
+
+    검색엔진에서 특정 페이지에 대한 요약을 찾을때 거의 description meta를 이용한다.
+    검색엔진에서 검색을할때 이용하는 키워드는 keywords meta를 이용한다.
+
+    http-equiv="refresh" content="30" 은 30초마다 웹페이지를 새로고침한다.
+    이때 http-equiv는 웹 브라우저가 서버에 명령을 내리는 속성으로 name 속성을
+    대신하여 사용될 수 있다. HTML 문서가
+    응답 헤더와 함께 웹 서버로부터 웹 브라우저에 전송되었을 때에만 의미를 갖는다.
+
+    keywords
+    description
+    robots 검색로봇제어
+    <meta name="robots" content="noindex, nofollow">
+    all : index, follow 지정
+    none : noindex, nofollow 지정
+    index : 페이지를 수집 대상으로 지정
+    follow : 페이지를 포함해 링크가 걸린 곳을 수집 대상으로 지정
+    noindex : 페이지를 수집 대상에서 제외
+    nofollow : 페이지를 포함해 링크가 걸린 곳을 수집 대상에서 제외
+    아래 값도 사용되지만 웹 표준에서는 인정 x
+    noarchive : 페이지를 캐시하지 않는다
+    noimageindex : 페이지에 포함된 이미지를 검색 대상에서 제외
+    noimageclick : 페이지에 포함된 이미지의 링크를 방지
+
+    date 날짜(제작일)
+    <meta name="Date" content="2016-02-15T07:45:37+09:00">
+
+    content-script-type 웹 페이지에 쓰인 언어 지정
+    content-style-type
+    <meta http-equiv="content-script-type" content="text/javascript">
+
+    X-UA-Compatible 브라우저 호환성 지정
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    subject 홈페이지 주제 지정
+    <meta http-equiv="subject" content="웹 표준 위한 사이트">
+
+    publisher 제작사 지정
+    Other Agent 웹 책임자 지정
+    Generator 제작 도구 지정
+    Reply-to or Email 메일 주소 지정
+
+    imagetoolbar 그림 위에 마우스 오버시 이미지 관련 툴바 생성 않도록 지정
+    <meta http-equiv="imagetoolbar" content="no">
+
+    cache-control 캐시가 되지 않도록 하기 위해 정의
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    페이지를 cache에서 가져오지 않고 항상 서버에 접속해서 가져오게끔 함
+    방문자의 브라우시가 cache를 읽도록 하더라도 무시하고 페이지를 갱신
+    자주 고치는 페이지의 경우 이를 사용하는 것이 항상 방문자에게 바뀐 내용을
+    보여 줄 수 있지만 페이지 출력 속도는 매번 페이지를 가져오므로 시간이 많이 걸림
+
+    Expires 캐시 만료일 정의
+    <meta http-equiv="Expires" content="Mon, 08 Sep 2016 10:10:10 GMT">
+
+    입력한 주소로 5초후 이동
+    <meta http-equiv="Refresh" content="5;url=http://google.com">
+
+    Page-Enter 페이지 들어갈 때 장면 전환 효과
+    <meta http-equiv="Page-Enter" content="revealtrans(Duration=1, Transition=12)">
+    Box out 네모난 박스가 안쪽에서 바깥쪽으로
+    Circle in 원이 바깥쪽에서 안쪽으로
+    해당 내용은 추후 검색
+
+    마찬가지로 page-exit도 있다.
+    다만 위 장면 전환 효과들은 프레임이 나누어진 곳에서는 효과가 나타나지 않는다.
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="생활코딩의 소개자료">
+        <meta name="keywords" content="코딩,coding,생활코딩,html,css,javascript">
+        <meta name="author" content="egoing">
+        <meta http-equiv="refresh" content="30">
+        <meta http-equiv="page-enter" content="revealtrans(duration=3, transition=0)">
+    </head>
+    <body>
+        hahahahahahahahahahahahaha
+    </body>
+</html>

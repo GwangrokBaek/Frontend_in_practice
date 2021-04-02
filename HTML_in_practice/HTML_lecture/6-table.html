@@ -1,0 +1,39 @@
+<!--td는 table data의 약자로 표의 항목을 구분해준다. (열이라고 생각)
+행을 만들어 주기위해서는 tr 태그로 그룹핑해준다.
+마지막으로 전체를 table 태그로 그룹핑해주어야 표 생성이 가능
+
+이때 테두리를 지정해주기 위해서는 table 태그의 속성 중 border를 이용
+하지만 요즘은 css를 이용해 table을 꾸며준다.
+
+과거에는 레이아웃을 잡아줄때 table을 이용해주었다.
+
+thead 와 tbody, tfoot로 구조적으로 표를 나눌 수 있다. 위치를 결정.
+만약 tfoot을 thead 위에 위치시켜주어도 tfoot은 젤 아래에 표시된다.
+
+th는 굵게 표시
+
+열 병합(수직)은 rowspan 이용
+행 병합(수평)은 colspan 이용
+-->
+<html>
+    <body>
+        <table border="1">
+        <thead>
+        <tr>
+            <th>이름</th><th>성별</th><th>주소</th><th>회비</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>phil</td><td>남</td><td rowspan="2">대구</td><td>1000</td>
+        </tr>
+        <tr>
+            <td>baek</td><td>남</td><td>500</td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="3">합계</td><td>1500</td>
+        </tfoot>
+        </table>
+    </body>
+</html>

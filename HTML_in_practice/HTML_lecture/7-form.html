@@ -1,0 +1,95 @@
+<!--
+    입력한 정보가 어디로 전송되는지에 대해 명시하기 위해서 form 태그 이용
+form에서 action 속성을 이용해서 사용자 정보가 제출되어야 할 곳을 입력해준다.
+action 폼을 전송할 서버 쪽 스크립트 파일 지정
+name 폼을 식별하기 위한 이름 지정
+accept-charset 폼 전송에 사용할 문자 인코딩 지정
+target action에서 지정한 스크립트 파일의 열리는 위치 지정
+method 폼을 서버에 전송할 http 메소드 지정 (get 또는 post)
+이때 get은 폼 데이터를 URL 끝에 붙여서 눈에 보이게 보내지만
+(http://localhost/login.php?name=baek&pwd=1234&address=daegu)
+post 방식은 내부적으로 보이지 않게 보낸다.
+(http://localhost/login.php)
+따라서 get 방식은 보안에 취약하기에 개인정보를 보낼 경우 post 방식 이용하며
+get방식은 지정된 리소스에서 데이터를 요청하는 경우인 읽을 때 사용하고,
+post방식은 지정된 리소스에서 데이터를 처리할 경우인 쓰기, 수정, 삭제할 때 사용.
+
+input 태그에서 type을 text로 해주면 사용자가 텍스트를 입력할 수 있는
+인풋 박스가 생김
+이때 type을 password로 지정할 경우 *로 표시된다.
+summit type은 제출 버튼이 생성된다.
+
+<type 속성 리스트>
+text 일반 문자
+password 비밀번호
+button 버튼
+submit 양식 제출용 버튼
+reset 양식 초기화용 버튼
+radio 한개만 선택할 수 있는 컴포넌트
+checkbox 다수를 선택할 수 있는 컴포넌트
+이때 radio와 checkbox 속성에서 checked 를 추가해주면 처음부터 선택되어짐
+name이 같을 경우에만 그룹핑이 되어 해당 그룹 중 하나 선택될 시 다른 버튼은
+선택 해제된다. name이 다를 경우에는 적용 x
+file 파일 업로드
+hidden 사용자에게 보이지 않는 숨은 요소
+
+이때, 단순히 컨트롤(박스)만 만들어서 정보를 보내면 해당 데이터가 무슨 정보인지
+모르므로 name 속성을 이용해 해당 데이터의 종류를 명시해준다.
+
+이외에도 input 태그에는 다음과 같은 속성들이 있다
+readonly 태그를 읽기전용으로 지정
+maxlength 해당 태그 최대 글자 수 지정
+required 해당 태그가 필수태그로 지정. 필수 태그 입력하지 않고 submit 버튼 누를 시
+에러메시지가 웹 브라우저에 출력
+autofocus 웹 페이지가 로딩되자마자 이 속성을 지정한 태그로 포커스 이동
+placeholder 태그에 입력할 값에 대한 힌트 제공
+pattern 정규표현식을 사용하여 특정범위 내의 유효한 값을 입력받을 때 사용
+
+fieldset 태그는 폼 엘리먼트들을 그룹화할때 사용. 이때 fieldset 태그 하위에
+legend 태그를 사용하여 그룹화한 엘리먼트들을 목적에 맞게 이름 지정 가능
+fieldset 태그의 style 속성을 이용해 width와 height 지정 가능
+<fieldset stype="width:300; height:500">
+
+select 및 option 태그는 드롭다운 리스트 생성에 이용
+select 속성으로 multiple을 명시해주면 여러개 선택 가능
+size 속성은 한번에 볼 수 있는 크기를 지정. 기본값은 4
+
+optgroup 태그는 option 태그를 그룹화한다
+-->
+
+<html>
+    <body>
+        <form action="http://localhost/login.php">
+            <fieldset style="width:300">
+                <legend>개인정보</legend>
+            <p>아이디 : <input type="text" name="id" required></p>
+            <p>비밀번호 : <input type="password" name="pwd" required></p>
+            <p>주빈번호 : <input type="password" name="num" 
+                pattern="\d{6}\-\d{7}"
+                title="123456-1234567 형식으로 입력해주세요"
+                required></p>
+            <p>주소 : <input type="text" name="address" 
+                placeholder="대구시"
+                required></p>
+            <p>성별 :
+                <input type="radio" name="gender" chekced> 남자
+                <input type="radio" name="gender"> 여자
+            </p>
+            </fieldset>
+            <p>응시분야 :
+                <input type="checkbox" name="part" chekced> 영어
+                <input type="checkbox" name="part"> 수학
+            </p>
+            <p>교통수단 :
+                <select>
+                    <optgroup label="기차">
+                    <option value="KTX">KTX</option>
+                    <option value="SRT">SRT</option>
+                    <option value="ITX">ITX</option>
+                </optgroup>
+                </select>
+            </p>
+            <input type="submit">
+        </form>
+    </body>
+</html>

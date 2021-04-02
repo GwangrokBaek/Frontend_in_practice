@@ -1,0 +1,23 @@
+<!--
+    form이란 결국 사용자가 입력한 정보를 서버에게 전달하기 위한 도구이다.
+
+    get 방식은 url에 사용자가 입력한 정보가 포함되어 전달 (url을 통해 데이터를 전달)
+    -> .
+    post 방식은 url에 정보가 붙지 않음 (다른 방식으로 데이터를 숨겨서 전달)
+    -> form을 이용해서 데이터를 전달할 경우 거의 100% post방식으로 전달
+
+    보통 이러한 전달 방식은 서버 엔지니어의 의견에 따라 결정
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="http://localhost/method.php" method="post">
+            <input type="text" name="id">
+            <input type="password" name="pwd">
+            <input type="submit">
+        </form>
+    </body>
+</html>
