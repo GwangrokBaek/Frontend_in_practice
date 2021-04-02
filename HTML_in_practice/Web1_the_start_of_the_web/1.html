@@ -1,0 +1,40 @@
+<!-- 옷에 붙어있는 태그가 옷에 대해 설명해주듯이, HTML 문법에서 태그는 꺽쇠로 감싼 해당 코드에 대해서 설명해준다.
+
+https://advancedwebranking.com/html/ 에서 자주 사용되는 태그를 기반으로 학습
+
+<br> 태그와 <p> 태그 모두 줄바꿈을 수행해주지만, 정보로서의 HTML 이 중요하며 이때 <p> 태그는 해당 태그로 감싼 코드가 하나의 단락이라는 의미를 주기때문에
+<p> 태그를 이용하는 것이 좋다. 이때 <br> 태그는 줄바꿈이라는 시각적인 기능만 제공해주므로 코드를 따로 감싸지 않고 하나의 태그만 사용한다.
+이때 <p> 태그는 고정된 여백을 제공하는데 만약 이를 변경해주고 싶다면 css 속성인 style 에 margin 을 지정해주면 된다.
+
+검색엔진의 경우 단순히 style 을 사용해서 폰트 사이즈를 키운 텍스트 보다 <h1> 태그 등을 사용해서 제목이라는 의미를 준 텍스트를 결과로 출력하는 것에 우선순위를 둔다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- head 태그는 body를 설명해주는 태그이다. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB1 - html</title>
+</head>
+
+<body> <!-- body 태그는 html 페이지의 본문을 의미한다. -->
+<h1><a href="index.html">WEB</a></h1>
+<ol>
+    <li><a href="1.html">HTML<a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.html">JavaScript</a></li>
+</ol>
+<!-- li 태그는 어디부터 어디까지 관련이 있는지를 알려주기 위해 ol 또는 ul 태그를 부모 태그로 가진다. 이때 li 와 ul 및 ol 을 부모 - 자식 관계라 한다. -->
+
+<h2>HTML</h2>
+<p><a href="https://www.w3.org/TR/html5" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.
+HTML elements are the building blocks of HTML pages.
+<img src="coding.jpg" width="50%"></p>
+<!-- 태그의 이름만으로는 정보가 부족할때 src, width 와 같이 속성을 이용해서 더 많은 정보를 줄 수 있다. 이때 속성의 위치는 상관없다. -->
+<p style="margin-top:40px">With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page.
+It provides a means to create structured documents by denoting structural semantics
+for text such as headings, paragraphs, lists, links, quotes and other items.
+HTML elements are delineated by tags, written using angle brackets.</p>
+</body>
+</html>
