@@ -1,0 +1,28 @@
+<!-- 반응형 웹이란 화면의 크기에 따라서 웹페이지의 각 요소들이 최적화 되는 것이며, 이를 반응형 디자인 또는 Resoponsive Web 이라고도 부른다.
+이때 mediaquery 를 사용해서 괄호안에 조건을 줄 수 있다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div {
+                border: 10px solid green;
+                font-size: 60px;
+            }
+            /* screen width < 800
+            창의 최대 크기가 800 픽셀보다 작은 경우에 div 태그를 표시하지 않게 한다. */
+            @media(max-width:800px) {
+                div {
+                    display:none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Responsive
+        </div>
+    </body>
+</html>

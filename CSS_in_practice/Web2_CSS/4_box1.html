@@ -1,0 +1,33 @@
+<!-- content 의 크기를 조절하여 디자인을 수행할 수 있는 모델을 박스 모델이라고 한다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- border 태그를 통해 특정 태그가 얼마만큼의 공간을 차지하는지를 확인할 수 있다.
+        이때 h1 태그의 경우 화면 전체를 차지하며, a 태그의 경우 자기 자신이 가지고 있는 content 의 크기만큼을 차지한다. -->
+        <style>
+            h1, a { /* 콤마를 사용해서 선택자를 나열함으로써 여러개의 태그에 대해 동시에 css 를 적용할 수 있다.
+                    이때 화면 전체를 차지하는 h1 태그를 block level element 라고 하며,
+                    자기 자신의 content 크기만을 차지하는 a 태그를 inline element 라고 한다. */
+                border-width: 5px;
+                border-color: red;
+                border-style: solid;
+                display: block; /* 만약 차지하는 공간의 종류를 바꾸고 싶다면 display 속성을 사용해서 inline 또는 block 으로 바꿔주면 된다.
+                none 을 명시하면 아예 사라지게 된다. */
+
+                border: 5px red solid; /* 위에서처럼 일일이 작성하면 귀찮으므로 border 속성 하나에 여러개의 값을 명시해줄 수 있다.
+                이때 순서는 상관없다. */
+                padding: 20px; /* content 와 테두리 사이의 여백을 주기 위해서는 padding 속성을 사용하면 된다. */
+                margin: 20px; /* 테두리와 테두리 사이의 여백을 조절하기 위해서는 margin 속성을 사용하면 된다. */
+                width: 100px; /* block level element 의 경우 화면 전체를 차지하게 되는데 content 의 크기를 조절하고 싶은 경우 width 속성을 사용하면 된다. */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <h1>CSS</h1>
+        Cascading Style Sheets <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">(CSS)</a> is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+    </body>
+</html>

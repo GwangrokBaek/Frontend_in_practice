@@ -1,0 +1,31 @@
+<!-- 레이아웃을 지정하기 위해 그리드를 사용할 수 있다. 이때 그리드를 사용하기 위해 div 태그 또는 span 태그를 사용하는데 이들은 정보 전달의 목적이 아닌,
+디자인을 위해 사용되는 태그들이다.
+div 태그는 division 의 약자로 block level element 이며,
+span 태그는 inline element 이다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #grid {
+                border:5px solid pink;
+                display:grid; /* grid 를 사용하기 위해 display 속성에 grid 값을 선언해준다. */
+                grid-template-columns: 150px 1fr; /* grid-template-columns 속성을 통해 부모 태그의 자식 태그들을 나란히 배치하고,
+                이들의 사이즈를 조정할 수 있다. 이때 첫 번째 자식 태그는 150px 의 고정된 사이즈를 가지고, 두 번째 자식 태그는 1fr 의 상대적인 크기를 가지게끔 한다.
+                만약 150px 1fr 이 아닌, 2fr 1fr 또는 1fr 1fr 이라고 하면 2:1, 1:1 의 크기를 가지게끔 한다.
+                이때 자식 태그들의 크기가 다를 경우, 큰 태그의 크기에 맞춰 그 크기가 자동으로 조정된다. */
+            }
+            div {
+                border:5px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid"> <!-- 아래 두 개의 태그를 나란히 배치하고 싶을 경우, 이들을 감싸는 부모 태그를 사용할 수 있다. -->
+            <div>NAVIGATION</div>
+            <div>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.</div>
+        </div>
+    </body>
+</html>

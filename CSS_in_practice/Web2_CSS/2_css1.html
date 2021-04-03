@@ -1,0 +1,51 @@
+<!-- style 태그안에 들어있는 내용은 css 이므로 이를 웹브라우저에게 css 에 맞게 해석하게끔 한다. 
+따라서 html 코드에서 font 를 이용해 추가적인 내용을 기술하지 않아도 되기에 문서의 용량이 줄어들고,
+디자인을 필요로 하지 않는 브라우저 또는 기타 프로그램의 경우에는 style 태그 안에 있는 디자인과 관련된 내용은 무시하고,
+html 이 주는 정보에만 전념할 수 있다는 특징이 있다. 따라서 css 가 나타났으며 이를 사용한다.
+style 태그를 사용하는 것 뿐만 아니라, html 태그에서 style 속성을 이용해서도 css 기능을 사용할 수 있다. -->
+
+<!doctype html>
+<html>
+<head>
+  <title>WEB - CSS</title>
+  <meta charset="utf-8">
+  <!-- 태그의 이름 (선택자) 을 기술하고 {} 로 감싸준 뒤, 그 안에 디자인 해줄 효과 (declaration) 를 작성해준다.
+    색상을 바꾸기 위해 color 속성 (property) 를 명시하고 그 뒤에 값 (value) 을 작성해준 뒤, 세미콜론을 붙여주면 된다.
+    세미콜론은 여러 declaration 을 구분하기 위해 사용된다.
+    앵커 태그에서 밑줄을 없애기 위해서는 text-decoration 을 none 으로 명시해주면 된다. -->
+  <style>
+      a {
+          color:red;
+          text-decoration: none;
+      }
+      h1 {
+          font-size: 45px;
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <ol>
+    <li><a href="1.html" style="color:blue; text-decoration: underline;">HTML</a></li>
+    <!-- style 태그를 따로 작성하는 것 말고도 html 태그에서 style 속성을 사용할 수 있다.
+    위의 style 태그에서 앵커 태그의 밑줄을 없앴으므로 이를 다시 지정해주고 싶다면, text-decoration 에 underline 을 명시해주면 된다. -->
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.html">JavaScript</a></li>
+  </ol>
+
+<!--
+  <h1><a href="index.html"><font color="red">WEB</font></a></h1>
+  <ol>
+    <li><a href="1.html"><font color="red">HTML</font></a></li>
+    <li><a href="2.html"><font color="red">CSS</font></a></li>
+    <li><a href="3.html"><font color="red">JavaScript</font></a></li>
+  </ol>
+-->
+
+  <h2>CSS</h2>
+  <p>
+    Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+  </p>
+  </body>
+  </html>

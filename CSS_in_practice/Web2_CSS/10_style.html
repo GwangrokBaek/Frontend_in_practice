@@ -1,0 +1,29 @@
+<!-- 같은 css 를 서로 다른 html 문서에 일일이 적용하는 것이 번거로우므로 css 파일을 따로 생성해 이를 적용할 수가 있다.
+이때 link 태그를 사용해서 웹페이지가 어떤 css 와 연결되어 있는지를 알려줄 수 있다. 그러면 웹브라우저는 해당 css 파일을
+다운로드 받아서 이를 웹페이지에 적용시킨다. 따라서 css 파일을 따로 두는 것은 css 를 html 문서에 직접 기입하는 것 보다는 트래픽이 발생하겠지만,
+캐싱 기능을 사용해서 이전에 받은 css 파일을 사용할 수 있기때문에 오히려 트래픽이 더 발생하지 않는다. -->
+
+<!doctype html>
+<html>
+<head>
+  <title>WEB - CSS</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <div id="grid">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+        <div id="article">
+            <h2>CSS</h2>
+            <p>
+                Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+            </p>
+        </div>
+  </div>
+  </body>
+  </html>
