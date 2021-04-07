@@ -1,0 +1,46 @@
+<!-- CSS 를 이용하여 엘리먼트의 배경을 지정할 수 있다. 주요 속성은 다음과 같다.
+background-color : red
+background-image : url("bg.png")
+background-repeat : repeat, no-repeat, repeat-x, repeat-y
+background-attachment : scroll, fixed
+background-position : left top | x% y% | x y
+background-size : 100px 100px | cover | contain -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            div {
+                font-size:100px;
+                height:600px;
+                border: 5px solid gray;
+                /* background-color: tomato; */
+                background-image: url("sample.jpg"); /* background-color 와 background-image 는 함께 사용할 수 있다.
+                이때 image 로 투명도가 있는 이미지를 사용하면 가려지지 않고 뒤의 색상이 보인다. */
+                background-repeat: no-repeat; /* 이미지의 크기가 컨텐츠 크기보다 작은 경우에는 기본값으로 repeat 즉, 이미지의 반복이 적용되는데, 만약
+                반복을 끄고 싶다면 no-repeat 을 설정해주면 된다. */
+                background-attachment:fixed; /* background-attachment 속성을 fixed 로 선언하면 이미지는 스크롤되지 않은채 본문만 스크롤되게끔 할 수 있다. */
+                background-size:500px 100px; /* background-size 속성을 사용하여 이미지의 크기를 조정할 수 있다.
+                이때 contain 은 화면안에 모든 이미지가 들어갈 수 있도록 이미지의 크기를 조정한다. 따라서 여백이 생길 수 있다.
+                cover 는 화면 전체를 이미지가 사용하도록 이미지의 크기를 조정한다. 따라서 이미지가 잘릴 수 있다. */
+                background-position: right center; /* background 이미지가 no-repeat 일 때 background-position 을 사용해서 background 이미지의 위치를
+                조절할 수 있다. 이때 기본값은 left top 이기 때문에 초기에는 왼쪽 상단에 background 이미지가 위치하게 된다. */
+                background: tomato url("sample.jpg") no-repeat fixed center;
+                /* background 속성을 통해 축약형으로 값을 선언할 수 있다. */
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum tristique purus sed ultricies. Aenean imperdiet elit tincidunt magna tempus gravida. Nam vitae libero cursus, ornare velit at, tincidunt dui. Praesent id lorem pellentesque est pretium aliquam. Integer dolor eros, dignissim quis neque facilisis, condimentum mollis lorem. Quisque vel faucibus nunc. Fusce ut hendrerit mi, in tempor erat. Aliquam gravida tortor facilisis, pulvinar odio porttitor, maximus metus.
+
+Maecenas a risus id ex mattis auctor. Pellentesque erat eros, tempor quis sodales eget, vestibulum nec dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec cursus enim metus, id sodales odio lacinia at. Donec vitae blandit ipsum, id molestie arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut venenatis augue, ac lobortis metus. Integer lacus diam, euismod congue mollis in, molestie ut mauris. In vitae ligula bibendum, laoreet lacus et, vehicula enim.
+
+Etiam quis lorem rutrum, pulvinar augue sit amet, placerat libero. Vivamus et enim id nunc varius fringilla ac a nisi. Quisque congue elementum elit eget molestie. Fusce non dui eget risus dapibus tempor quis non purus. Proin est libero, consectetur eget justo varius, venenatis cursus odio. Sed et elit leo. Aenean tincidunt lectus leo, quis posuere velit pharetra vitae. Sed semper magna vitae ultricies malesuada. In quis nibh accumsan mi imperdiet sagittis at vel dolor. Sed sodales lacus et nibh gravida bibendum.
+
+Nullam sit amet erat tempus, viverra purus vel, dictum dolor. Curabitur ut lacus sed quam convallis porta ultrices id est. In pulvinar diam quis suscipit euismod. Sed neque augue, cursus eget vehicula eu, iaculis ac orci. Aliquam erat volutpat. Fusce eleifend porta metus, in porttitor massa blandit sed. Proin auctor quam egestas ligula congue, sed pellentesque sem eleifend. Curabitur lobortis sem at turpis aliquam eleifend. Mauris nisl enim, pellentesque id mattis ut, iaculis et sapien. Morbi sit amet quam sodales, condimentum ante id, ullamcorper est. Suspendisse nec iaculis nunc.
+
+Mauris ut neque nisl. Etiam non augue lectus. Sed et mollis turpis. In non tempus nulla, a bibendum metus. Phasellus in neque dignissim, malesuada lacus at, faucibus ipsum. Suspendisse quis enim ac lacus placerat tincidunt vitae sed dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed viverra, elit eu mattis accumsan, velit leo interdum erat, id mattis neque leo aliquam felis. Aliquam erat volutpat. Pellentesque porta rhoncus sem, eu tincidunt sapien. Sed fermentum enim non vestibulum viverra. Integer quis tellus augue. Aliquam sollicitudin pellentesque urna non finibus.
+        </div>
+    </body>
+</html>

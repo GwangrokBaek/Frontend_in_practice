@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            ul li { /* 조상 자손 선택자로 직계 자손 뿐만 아니라, ul 태그 아래에 있는 모든 li 태그들을 선택한다. */
+                color:red;
+            }
+            ol>li { /* 부모 자식 선택자로 ol 태그 바로 아래에 있는 직계자손인 li 태그를 선택한다. 하지만 코드 상 ol - li 관계가 두 번 나타나기에
+                모호하여 반영되지 않는다. 따라서 아래처럼 id 선택자를 사용해주어야 한다. */
+                border: 1px solid red;
+                color:blue;
+            }
+            #lecture>li { /* > 를 사용하였으므로 id 가 lecture 인 태그의 직계자손인 li 태그에게만 적용된다.
+                따라서 border 속성의 경우 직계자손에게만 적용되었는데, color 속성의 경우 상속이 적용되므로 직계 자손 말고도 id 가 lecture 인 태그 아래의
+                모든 li 태그에 적용이 된다. */
+                border: 1px solid red;
+                color: blue;
+            }
+            ul, ol { /* 콤마를 사용하면 나열된 모든 태그에게 적용된다. */
+                background-color: powderblue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <ol id="lecture">
+            <li>HTML</li>
+            <li>CSS</li>
+                <ol>
+                    <li>selector</li>
+                    <li>declaration</li>
+                </ol>
+            <li>JavaScript</li>
+        </ol>
+    </body>
+</html>

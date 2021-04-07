@@ -1,0 +1,81 @@
+<!-- float 을 활용해서 holy grail layout 을 만들 수 있다. 만드는 법이 상당히 어려웠기에 holy grail (성배) layout 이라는 이름이 붙어졌다.
+하지만 float 을 활용해서 holy grail layout 을 만드는 경우, 화면의 크기가 고정된다는 단점이 있다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .container {
+                width: 540px; /* 화면의 크기가 작아질 경우, 페이지상 배치될 공간이 부족해져 nav, article, aside 의 위치가 뒤죽박죽이 된다.
+                따라서 화면의 크기가 작아지더라도 고정폭을 가지도록 전채를 감싸는 container 클래스의 width 속성에 값을 선언해준다. */
+                border: 1px solid gray;
+                margin:auto; /* margin 속성에 auto 값을 선언해주면 화면의 크기에 따라 왼쪽과 오른쪽의 margin 값이 균등하게 분배된다. */
+            }
+            header {
+                border-bottom: 1px solid gray;
+                padding-left: 10px;
+            }
+            nav { /* nav 가 article, aside 와 수평으로 배치되어야 하므로 float 속성에 left 값을 선언해준다.
+                nav, article, aside 모두의 float 속성에 left 값을 선언한다는 것은 이미지와 본문과의 자연스러운 배치처럼 글자가 새어나오지 않도록
+                서로 대등한 관계에서 자신의 자리를 차지하게끔 하는 것 */
+                float: left;
+                width:120px; /* 적은 공간탓에 줄바꿈이 수행되지 않게끔 고정폭을 준다. */
+                border-right: 1px solid gray;
+                box-sizing: border-box;
+            }
+            article {
+                float: left; /* article 이 nav, aside 와 수평으로 배치되어야 하므로 float 속성에 left 값을 선언해준다. */
+                width: 300px; /* 적은 공간탓에 줄바꿈이 수행되지 않게끔 고정폭을 준다. */
+                text-align: left;
+                padding: 30px;
+                border-right: 1px solid gray;
+                border-left: 1px solid gray; /* article 의 텍스트 height 이 nav 및 aside 의 텍스트 height 보다 크므로
+                nav 및 aside 에서만 border 를 생성할 경우 잘리게 된다. 따라서 article 에서도 border 를 생성해준다. */
+                margin-left:-1px; /* 이때 border 는 1px 만큼 공간을 차지하므로 nav 및 aside 의 border 와 이격이 생긴다. 따라서
+                margin 을 통해 벌어진 1px 만큼 움직여준다. */
+                box-sizing: border-box;
+            }
+            aside {
+                float: left; /* aside 가 nav, article 과 수평으로 배치되어야 하므로 float 속성에 left 값을 선언해준다. */
+                border-left: 1px solid gray;
+                width: 120px; /* 적은 공간탓에 줄바꿈이 수행되지 않게끔 고정폭을 준다. */
+                margin-left:-1px;
+                
+            }
+            footer {
+                clear:both; /* footer 는 nav, article, aside 아래에 와야하므로 float 속성에 의해 영향을 받지 않게하기 위해 clear 속성에
+                both 값을 선언해준다. */
+                border-top: 1px solid gray;
+                text-align: center;
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>
+                    CSS
+                </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>position</li>
+                    <li>float</li>
+                    <li>flex</li>
+                </ul>
+            </nav>
+            <article>
+                <h2>float</h2>
+                Maecenas a risus id ex mattis auctor. Pellentesque erat eros, tempor quis sodales eget, vestibulum nec dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec cursus enim metus, id sodales odio lacinia at. Donec vitae blandit ipsum, id molestie arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut venenatis augue, ac lobortis metus. Integer lacus diam, euismod congue mollis in, molestie ut mauris. In vitae ligula bibendum, laoreet lacus et, vehicula enim.
+            </article>
+            <aside>
+                ad
+            </aside>
+            <footer>
+                copyleft
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 상속은 부모 엘리먼트의 속성을 자식 엘리먼트가 물려받는 것을 의미한다. 상속은 CSS 에서 생산성을 높이기 위한 중요한 기능이다.
+이때 상속이 적용되는 속성들이 따로 있다.
+
+해당 내용을 아래 링크에서 확인할 수 있다.
+https://www.w3.org/TR/CSS21/propidx.html
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            /*
+            li {
+                color:red;
+            }
+            h1 {
+                color:red;
+            }
+            */
+            html { /* 위에서처럼 태그 각각의 색상을 따로 지정할 필요 없이 html 태그의 색상을 지정해주면 그 자손 태그들의 색상도 모두 변경된다. */
+                color:red;
+            }
+            #select {
+                color: black;
+            }
+            body { /* color 속성의 경우 상속이 되지만, border 의 경우에는 상속이 되지 않는다. */
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>수업내용</h1>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="select">javascript</li>
+        </ul>
+    </body>
+</html>

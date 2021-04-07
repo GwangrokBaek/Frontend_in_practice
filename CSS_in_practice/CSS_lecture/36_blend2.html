@@ -1,0 +1,29 @@
+<!-- mix-blend-mode 는 컨텐츠와 백그라운드 사이에 블렌드 효과를 주는 속성이다.
+codepen 에서 CSS 속성을 검색하면 해당 속성으로 할 수 있는 다양한 예제에 대해서 확인할 수 있다.
+http://codepen.io/search/pens?q=blend&limit=all&type=type-pens
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url("sample.jpg");
+            }
+            .blend {
+                font-size:2rem;
+                font-weight:bold;
+                color:red;
+                mix-blend-mode:screen; /* mix-blend-mode 가 선언된 선택자가 blend 클래스이므로 blend 클래스에 있는 내용과 background 간에
+                블렌드 효과를 적용해준다. */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="blend">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1> Nunc condimentum tristique purus sed ultricies. Aenean imperdiet elit tincidunt magna tempus gravida. Nam vitae libero cursus, ornare velit at, tincidunt dui. Praesent id lorem pellentesque est pretium aliquam. Integer dolor eros, dignissim quis neque facilisis, condimentum mollis lorem. Quisque vel faucibus nunc. Fusce ut hendrerit mi, in tempor erat. Aliquam gravida tortor facilisis, pulvinar odio porttitor, maximus metus.
+
+Maecenas a risus id ex mattis auctor. Pellentesque erat eros, tempor quis sodales eget, vestibulum nec dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec cursus enim metus, id sodales odio lacinia at. Donec vitae blandit ipsum, id molestie arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut venenatis augue, ac lobortis metus. Integer lacus diam, euismod congue mollis in, molestie ut mauris. In vitae ligula bibendum, laoreet lacus et, vehicula enim.
+        </div>
+    </body>
+</html>

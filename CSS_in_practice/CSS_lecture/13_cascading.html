@@ -1,0 +1,46 @@
+<!--
+캐스케이드는 폭포라는 의미가 있다. 이때 웹페이지는 웹브라우저, 사용자, 컨텐츠 생산자의 조화를 중요한 철학으로 삼고 있다.
+즉, 웹페이지의 디자인이 웹브라우저의 기본 디자인과 브라우저 사용자의 디자인 그리고 웹페이지 저자의 디자인이 결합될 수 있다는 의미인데,
+글씨 크기가 작아서 사용자가 글꼴을 키우는 것 등을 의미한다.
+
+여기서 캐스케이딩은 하나의 엘리먼트에 대해서 다양한 효과가 영향력을 행사하려고 할 때 우선순위를 어떻게 설정하는가에 대한 규칙이다.
+하나의 태그에 동시에 여러 사용자가 디자인을 적용할 경우,
+웹브라우저 < 사용자 < 저자 순으로 우선순위가 높아진다.
+
+디자인의 우선순위는 다음과 같다.
+브라우저의 기본 디자인 < 태그 선택자 < 클래스 선택자 < id 선택자 < style 속성 순으로 우선순위가 높아진다.
+
+왜냐하면 포괄적이고 일반적인 것 보다 구체적이고 명시적인 것의 우선순위가 더 높기 때문이다.
+하지만 !important 를 붙여주면 해당 값이 쓰여진 속성의 태그 우선순위가 제일 높아진다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            li {
+                color:red !important; /* important 키워드를 사용하였으므로 우선순위가 제일 높아진다. */
+            }
+            #idsel {
+                color:blue;
+            }
+            .classsel {
+                color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>html</li>
+            <li id="idsel" class="classsel" style="color:powderblue">css</li>
+            <li>javascript</li>
+        </ul>
+        <ol>
+            <li>style attributes</li>
+            <li>id selector</li>
+            <li>class selector</li>
+            <li>tag selector</li>
+        </ol>
+    </body>
+</html>

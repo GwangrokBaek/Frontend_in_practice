@@ -1,0 +1,43 @@
+<!-- transform 은 엘리먼트의 크기, 위치, 모양을 변경하는 속성이다.
+
+트랜스폼과 관련된 여러가지 라이브러리
+http://elrumordelaluz.github.io/csshake/#1
+http://www.minimamente.com/example/magic_animations/
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            h1 {
+                background-color: deepskyblue;
+                color:white;
+                display: inline-block; /* transform 은 inline level element 에는 적용되지 않고,
+                block level element 나 inline-block 에만 적용된다. 여기서 inline-block 은 inline level element 처럼 줄바꿈 없이
+                다른 엘리먼트들과 나란히 배치되지만, width 와 height 속성 및 margin 과 padding 속성 지정이 가능한 엘리먼트를 의미한다. 
+                button 과 select 태그 등이 inline-block 엘리먼트이다. */
+                padding: 5px;
+                font-size: 3rem;
+                margin:100px;
+                transform:scaleX(2); /* X 축으로 2 배 만큼 늘리라는 의미이다. */
+                transform:scaleY(0.5); /* Y 축으로 1/2 배 만큼 줄이라는 의미이다. 이때 transform 의 경우 두 번 이상 사용하면 가장 마지막에 위치해 있는
+                transform 속성이 이전에 나온 값들을 덮어쓰게 된다. */
+                transform:
+                /*
+                    scaleX(2) 아래 축약형으로도 선언 가능하다.
+                    scaleY(0.5);
+                */
+                    scale(2, 0.5); /* 덮어쓰지 않게 하려면 이처럼 scale 을 통해 같이 선언해주면 된다. */
+            }
+            h1:hover {
+                transform-origin: left top; /* transform 속성은 중앙을 기준으로 변형되지만, transform-origin 속성을 사용하면 기준값을 설정할 수 있다.
+                첫 번재 자리는 X 축, 두 번째 자리는 Y 축을 의미한다. left top 뿐만 아니라 % 로도 지정할 수 있다. 이때 X 축의 100% 는 오른쪽 끝, Y 축의 100% 는
+                제일 아래를 의미한다. */
+                transition:all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello Transform!</h1>
+    </body>
+</html>

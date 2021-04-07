@@ -1,0 +1,37 @@
+<!-- fixed 는 left/right/top/bottom 을 화면 기준으로 움직인다. 즉, 스크롤에 독립적이다.
+이때 fixed 는 뱃지 (badge) 등을 만들 때 유용하다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                padding-top:30px;
+            }
+            #parent, #other {
+                border:5px solid tomato;
+            }
+            #large {
+                background-color: tomato;
+                height:10000px;
+            }
+            #me {
+                background-color: black;
+                color: white;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="other">other</div>
+        <div id="parent">parent
+            <div id="me">me</div>
+        </div>
+        <div id="large">large</div>
+    </body>
+</html>

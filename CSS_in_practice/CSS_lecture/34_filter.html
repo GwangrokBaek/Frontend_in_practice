@@ -1,0 +1,38 @@
+<!-- 필터는 원본 이미지를 그대로 유지하면서 이미지에 다양한 효과를 추가하는 속성이다
+이때 이미지 뿐만 아니라, iframe, video, 텍스트에 대해서도 효과를 줄 수 있다. 예전에는 이러한 필터를 통해 효과를 주기 위해서는 이미지에만 가능했는데
+코드로서 표현되는 이미지 태그, iframe, video, 텍스트에 대해 효과를 줄 수 있기에 정보를 가지고 있어 검색이 가능하므로 굉장한 기능이라 할 수 있다.
+
+필터 플레이그라운드
+https://bennettfeely.com/image-effects/
+https://css-playground.com/view/39/css-filter-playground
+
+필터는 최신기능이라 일부 브라우저에서는 지원하지 않을수도 있다. 따라서 벤더 프리픽스를 사용해야 한다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            img {
+                transition: all 1s; /* 장면 전환 효과를 주는 속성이다. 추후에 배운다. */
+            }
+            img:hover { /* 필터는 최신기능이라 일부 브라우저에서는 지원하지 않을수도 있다. 또는 실험적으로 지원하는 경우도 있는데 이를 벤더 프리픽스 (vendor prefix)
+                라고 해서 앞에 접두사를 붙이게 된다. 아래에 -webkit 은 크롬이나 사파리에서 사용하는 벤더 프리픽스이며,
+                -o 는 오페라에서 사용하는 벤더 프리픽스이다.
+                가상 클래스 선택자 hover 를 통해 마우스를 위에 올렸을 때에만 필터 효과가 적용되게끔 할 수 있다. */
+                -webkit-filter: grayscale(100%) blur(3px);
+                -o-filter: grayscale(100%) blur(3px);
+                filter: grayscale(100%) blur(3px);
+            }
+            h1 { /* 텍스트에도 필터를 사용할 수 있다. */
+                -webkit-filter: blur(1px); /* 블러는 픽셀단위로 효과를 적용한다. */
+                -o-filter: blur(1px);
+                filter: blur(3px);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Stationary</h1>
+        <img src="sample.jpg" alt="">
+    </body>
+</html>

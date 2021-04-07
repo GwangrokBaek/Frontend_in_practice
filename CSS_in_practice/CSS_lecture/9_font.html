@@ -1,0 +1,62 @@
+<!-- font 와 관련된 여러가지 속성들이 있다.
+
+font-family
+서체를 지정하는 속성으로 해당 폰트가 사용자 컴퓨터에 없을 경우, 첫 번째 값, 두 번째 값, 세 번째 값 순서대로 폰트를 사용하게 된다. 이때 마지막 폰트는 포괄적인 폰트를 지정한다.
+앞에 기술된 폰트들이 하나도 없는 경우, 마지막에 지정된 포괄적인 폰트를 사용한다.
+포괄적인 폰트로는 아래와 같은 것들이 있다.
+serif (장식이 있는 폰트)
+sans-serif (sans 는 부정형이다. 따라서 장식이 없는 폰트를 의미한다.)
+cursive (흘림체)
+fantasy (화려한 글꼴)
+monospace (가변폭이 아닌, 글자 폭과 간격이 일정한 고정폭)
+
+font-weight
+폰트의 두께를 나타낸다. bold 를 사용할 경우 폰트가 두껍게 표시된다.
+
+line-height
+행과 행 사이의 간격을 지정한다. 기본 값은 normal 로 수치는 1.2 에 해당된다. 값이 1.2 라면 현재 엘리먼트 폰트 크기의 1.2 배 만큼 간격을 준다는 의미이다.
+
+font
+폰트와 관련된 여러 속성을 축약형으로 표현할 수 있는 속성으로 형식은 아래와 같다. 이때 순서를 지켜서 기술해야 한다.
+font: font-style font-variant font-weight font-size/line-height font-faimliy|caption|icon|menu
+|message-box|small-caption|status-bar|initial|inherit;
+이 중에서 font-size, font-familiy 는 필수로 포함되어야 하는 정보이다.
+
+폰트 랭킹
+http://www.fontreach.com/#top
+
+국내 폰트
+http://software.naver.com/software/fontList.nhn?categoryId=I0000000#brandId=
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #type1 {
+                font-size:5rem;
+                font-family:arial, verdana, "Helvetica Neue", monospace;
+                /* 서체의 이름 중에 띄어쓰기가 되어있는 서체가 있는데 이럴 경우 따옴표로 묶어줘야 한다. */
+                font-weight: bold;
+                line-height: 2; /* px 로 지정할 수도 있지만 고정된 크기를 가지므로 사용자가 폰트 크기를 바꿀 경우 변화가 없어 부자연스러울 수 있다. */
+            }
+            #type2 {
+                font: bold 5rem/2 arial, verdana, "Helvetica Neue", monospace;
+                /* line-height 의 경우 앞에 / 를 붙여줘야 한다. 띄어쓰기로 구분하면 되며, font-family 의 경우 네 가지 폰트를 지정해주기 위해 쉼표로 구분한다. */
+            }
+        </style>
+    </head>
+    <body>
+        <p id="type1">
+            Hello World<br>
+            Hello World
+        </p>
+
+        <p id="type2">
+            Hello World<br>
+            Hello World
+        </p>
+
+    </body>
+</html>

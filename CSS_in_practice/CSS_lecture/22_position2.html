@@ -1,0 +1,39 @@
+<!--
+absolute 는 가까운 조상 중에 position:static 이 아닌 조상을 기준으로 left/right/top/bottom 을 움직인다.
+이때, 모든 조상이 position:static 이라면 html 을 기준으로 움직인다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #parent, #other, #grand {
+                border: 5px solid tomato;
+            }
+            #grand {
+                position: relative;
+            }
+            #me {
+                background-color: black;
+                color: white;
+                position: absolute;
+                left:0px; /* position 이 absolute 일 때 left 와 top 을 지정해주고 만약 조상 태그 중에
+                position 이 static 이 아닌 조상이 있다면 (위치가 지정되어 있으면), 부모 태그를 기준으로 움직인다.
+                모든 조상의 position 이 static 이라면 (위치가 지정되어 있지 않으면), html 태그를 기준으로 움직인다.
+                하지만 위치가 지정되어 있지 않더라도 left 와 top 을 지정해주지 않으면 부모 태그의 위치를 기준으로 자식 태그의 위치가 설정된다.
+                (왜냐하면 position 이 absolute 일 때의 left 와 top 의 기본값은 부모 태그의 left 와 top 값이기 때문이다.)
+                
+                여기서는 조상 태그인 grand 의 position 이 static 이 아니므로 (위치가 지정되어 있으므로) grand 태그를 기준으로 위치가 움직이게 된다.
+                만약 grand 태그의 position 이 지정되어 있지 않으면 (static 이면) html 태그를 기준으로 움직인다. */
+                top:0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="other">other</div>
+            <div id="grand">grand
+            <div id="parent">parent
+                <div id="me">me</div>
+            </div>
+        </div>
+    </body>
+</html>

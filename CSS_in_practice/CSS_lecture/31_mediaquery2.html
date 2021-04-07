@@ -1,0 +1,92 @@
+<!-- 미디어 쿼리는 기기 사이즈에 따른 화변 변화 뿐만 아니라 여러 상황에서 적용할 수 있는데, 예를 들어 프린트를 출력할 경우에
+출력하기 좋은 화면으로 바꾸는 그런 상황에도 사용할 수 있다. -->
+
+<html>
+    <head>
+        <meta name="viewport" content="width=divcie-wdith, initial-scale=1.0"> 
+        <style>
+            body {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            header {
+                border-bottom: 1px solid gray;
+                padding-left:20px;
+            }
+            .container {
+                display:flex;
+                flex-direction: column;
+                border: 1px solid gray;
+                width:800px;
+            }
+            .content {
+                display:flex;
+                flex-direction: row;
+            }
+            .content nav {
+                border-right:1px solid gray;
+                padding:20px;
+            }
+            .content main {
+                padding:10px;
+            }
+            .content aside {
+                border-left:1px solid gray;
+                padding:20px;
+            }
+            nav, aside {
+                flex-basis: 150px;
+                flex-shrink: 0;
+            }
+            footer {
+                border-top: 1px solid gray;
+                text-align: center;
+                padding: 20px;
+            }            
+            @media(max-width:600px) { /* 미디어 쿼리를 맨 마지막에 선언해주어야 한다. 그렇지 않으면 우선순위에 밀려 적용되지 않는다. */
+                .content {
+                    flex-direction: column;
+                }
+                .content nav, .content aside {
+                    border: none;
+                    flex-basis: auto; /* flex-basis 를 auto 로 선언하면 자기 콘텐츠 크기만큼 크기를 차지하게 된다. */
+                }
+                main {
+                    order: 0;
+                }
+                nav {
+                    order: 1;
+                }
+                aside {
+                    order: 2;
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>생활코딩</h1>
+            </header>
+            <section class="content">
+                <nav>
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
+                </nav>
+                <main>
+                    Maecenas a risus id ex mattis auctor. Pellentesque erat eros, tempor quis sodales eget, vestibulum nec dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec cursus enim metus, id sodales odio lacinia at. Donec vitae blandit ipsum, id molestie arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut venenatis augue, ac lobortis metus. Integer lacus diam, euismod congue mollis in, molestie ut mauris. In vitae ligula bibendum, laoreet lacus et, vehicula enim.
+                </main>
+                <aside>
+                    AD
+                </aside>
+            </section>
+            <footer>
+                <a href="https://opentutorials.org">홈페이지</a>
+            </footer>
+        </div>
+    </body>

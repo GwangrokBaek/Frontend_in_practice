@@ -1,0 +1,53 @@
+<!-- 아이템은 컨테이너의 크기에 따라서 작아지기도 하고 커지기도 한다. 이때 작아지고, 커지는 비율을 지정하는 방법이 바로 grow & shrink 이다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .container {
+                background-color: powderblue;
+                display: flex;
+                flex-direction: row;
+                height: 200px;
+            }
+            .item {
+                background-color: tomato;
+                color:white;
+                border: 1px solid white;
+                flex-grow:1; /* flex-grow 의 기본값은 0 이며, 이는 부모 태그의 영역을 꽉 채우게끔 하는 속성이다. 즉 여백을 남기지 않고 균등하게 공간을 차지하게 된다.
+                0 을 지정하면 flex-grow 가 꺼지고, 1 을 지정하면 flex-grow 가 켜진다. 즉, 자식 태그의 수가 5 개 이므로 5 분의 1 만큼 공간을 균등하게 차지한다. */
+            }
+            .item:nth-child(2) { /* 클래스 값이 item 인 엘리먼트 중에서 두 번째로 등장하는 요소를 선택한다는 의미이다. */
+                
+                flex-basis: 200px; /* 두 번째 요소의 기본 (basis) 크기가 200이 된다. 즉, flex-basis 는 flex 의 방향에 따라서 크기가 지정된다. 
+                방향이 row 라면 폭이 200px 이 되고, 방향이 column 이라면 높이가 200이 된다. */
+                
+                flex-grow:2; /* flex-grow 가 켜져있는 상태에서 만약 두 번째 요소만 공간을 더 차지하게끔 하고싶다면, 해당 자식 태그의
+                flex-grow 의 값을 키워주면 된다. flex-grow 에 2를 지정하면 전체 자식 태그의 수 5 에서 원래 5 분의 1 씩 나눠가지던 공간을 두 번째 요소가
+                6분의 2 만큼 가져가게 되고, 나머지는 6분의 1만큼 가져가게 된다. 3으로 지정하면 7분의 3만큼 가져가고, 나머지는 7분의 1씩 나눠가진다.
+                이때 전체 아이템 태그에서 값이 1이던 flex-grow 를 0으로 바꾸면 2 번째 요소에만 flex-grow 가 2로 설정되는데, 이 경우, 나머지 요소들은
+                여백을 차지하지 않는다는 의미이므로 본인의 기본 크기 (bsis) 만 차지하며 여백은 2 번째 요소가 다 차지하게 된다. 이때에는 100이든 50이든 값에 상관없이
+                2 번째 요소가 동일하게 모든 여백을 차지한다. */
+
+                flex-shrink: 1; /* flex 를 사용하는 태그의 경우 화면의 크기가 줄어들 때 반응하여 그 크기가 같이 줄어든다. 이때 여백이 없는 요소들의 경우에는
+                줄어들지 않고, 여백이 많은 요소가 줄어들게 된다. (위에서 나머지 요소의 크기는 초기값이며, 두 번째 요소의 기본 크기가 200px 이므로
+                두 번째 요소의 크기가 줄어들게 된다.) 이때 flex-shrink 속성은 크기가 줄어드는 것을 결정하는 속성인데, 0을 지정해주면 화면의 크기가 줄어들더라도
+                크기가 고정된 채로 더이상 줄어들지 않는다. flex-grow 와 마찬가지로 1이 지정되면 flex-shrink 가 켜진다. */
+            }
+            .item:nth-child(1) {
+                flex-basis: 200px;
+                flex-shrink: 2; /* shrink 의 값이 서로 다를 경우, 두 번째 요소의 shrink 값인 1 과 첫 번째 요소의 shrink 값인 2 에 비례하여
+                크기가 줄어들게 된다. 즉, 첫 번재 요소의 크기가 더 빨리 줄어들게 된다. */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </body>
+</html>

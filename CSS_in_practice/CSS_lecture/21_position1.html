@@ -1,0 +1,39 @@
+<!-- 포지션은 엘리먼트의 위치를 지정하는데 사용된다. 이때 그 종류로는 네 가지가 있다.
+엘리먼트 position 의 기본값은 static 이다.
+
+static : left/right/top/bottom 의 값을 무시한다.
+relative : left/right/top/bottom 을 원래 있던 위치 (부모 아래) 를 기준으로 움직인다.
+absolute : 가까운 조상 중에 position:static 이 아닌 조상을 기준으로 left/right/top/bottom 을 움직인다.
+이때, 모든 조상이 position:static 이라면 html 을 기준으로 움직인다.
+fixed : left/right/top/bottom 을 화면 기준으로 움직인다. 즉, 스크롤에 독립적이다.
+
+여기서 absolute 와 fixed 는 부모와의 링크가 끊기며, content의 크기가 바뀐다. 마찬가지로 부모 또한 자식과의 관계를 잃게 된다.
+
+포지션의 우선순위는 다음과 같다.
+left > right, top > bottom
+ -->
+
+ <!doctype html>
+ <html>
+     <head>
+         <style>
+             html {
+                 border:1px solid gray;
+             }
+             div {
+                border:5px solid tomato;
+                margin:10px;
+             }
+             #me {
+                 position:relative;
+                 left:100px;
+             }
+         </style>
+     </head>
+     <body>
+         <div id="other">other</div>
+         <div id="parent">parent
+            <div id="me">me</div>
+         </div>
+     </body>
+ </html>

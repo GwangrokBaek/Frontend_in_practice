@@ -1,0 +1,28 @@
+<!-- 단일 엘리먼트에서의 마진겹침 현상 (top&bottom, left&right) -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #empty {
+                margin-top:50px;
+                margin-bottom:100px;
+                border: 1px solid tomato; /*
+                단일 태그 내에서도 마진 겹침 현상이 발생할 수 있다.
+                여기서 태그의 시각적인 요소를 없앨 경우, 단일 태그의 margin-top 과 margin-bottom 사이에 마진 겹침 현상이 발생하여
+                margin-top 과 margin-bottom 중 큰 값을 margin 으로 취한다. 따라서 여기서는 총 100px 만큼의 margin 을 가지게 된다.
+                만약 시각적인 요소가 있다면, 마진 겹침 현상이 발생하지 않아 margin-top 과 margin-bottom 모두 존재하여 총 150px 만큼의 margin 을 가지게 된다.
+                margin top 과 bottom 뿐만 아니라, left 와 right 도 마찬가지이다. */
+            }
+            #normal {
+                background-color: powderblue;
+                margin-top: 100px; /* 아래에 위치해 있는 id 가 normal 인 태그의 margin-top 을 100px 로 설정하더라도
+                위에 위치해 있는 id 가 empty 인 태그의 margin-bottom 이 100px 이기 때문에 마진 겹침 현상이 발생하여 간격이 벌어지지 않는다. */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="empty"></div>
+        <div id="normal">normal</div>
+    </body>
+</html>

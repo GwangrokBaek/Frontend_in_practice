@@ -1,0 +1,26 @@
+<!-- 마진겹침 (margin-collapsing) 현상은 상하 마진값이 어떤 상황에서 사라지는 현상을 의미한다.
+
+이때 마진 겹침 현상은 크게 세 가지가 있으며, 다음과 같다.
+1. 위아래 (형제) 엘리먼트 중에서 margin 값이 큰 값을 취한다.
+2. 부모자식 관계에서 부모 엘리먼트의 시각적인 요소가 없다면 부모자식 중 marging 값이 큰 값을 자식 요소의 margin 값으로 취한다.
+3. 단일 엘리먼트에서 시각적인 요소가 없을 경우, margin-top 과 margin-bottom 중 큰 값을 margin 값으로 취한다. left 와 right 도 마찬가지이다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h1 {
+                border: 1px solid red;
+                margin: 100px; /* 마진 겹침 현상이 없다면 li 태그나 아래 h1 태그 같은 경우, 각 태그들 사이의 마진이 위 마진 + 아래 마진 으로 200 px 이 되어
+                불편할 것이다. 따라서 이 같은 경우에는 마진 겹침 현상이 발생하여 100 px 이 된다. 이때 위의 태그와 아래 태그의 마진 값 중에 가장 큰 값이
+                마진 값으로 결정된다. */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <h1>Hello World</h1>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!-- mediaquery 는 화면의 종류와 크기에 따라서 디자인을 달리 줄 수 있는 CSS 의 기능이다. 반응형 디자인의 핵심 기술이다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=divcie-wdith, initial-scale=1.0"> <!-- mediaquery 를 모바일에서도 적용하기 위해서는
+        viewport 를 선언해주어야 한다. -->
+        <style>
+            @media(max-width:500px) { /* 화면의 크기가 500 px 보다 작아질 때 background-color 가 빨간색으로 변경된다. */
+                body {
+                    background-color: red;
+                }
+            }
+            @media(max-width:600px) { /* 캐스케이드가 적용되어서 아래 mediaquery 만 동작된다. 같은 조건일 경우에는 제일 나중에 오는 조건의 우선순위가 높다. 
+                여기서 캐스케이드라는 것은 같은 컨텐츠에 여러 개의 효과가 적용되는 경우 적용되는 규칙을 의미한다. */
+                body {
+                    background-color: green;
+                }
+            }
+            @media (min-width:601px) { /* 화면의 크기가 601 px 보다 클 때 background-color 가 파란색으로 변경된다. */
+                body {
+                    background-color: blue;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            body {
+                display:flex;
+                justify-content: center; /* 중앙으로 수평 배치 */
+                align-items: center; /* 중앙으로 수직 배치 <!doctype html> 을 명시하면 적용되지 않는다. */
+            }
+            header {
+                border-bottom: 1px solid gray;
+                padding-left:20px;
+            }
+            .container { /* header - section - footer 를 수직으로 배치 */
+                display:flex;
+                flex-direction: column;
+                border: 1px solid gray;
+                width:800px; /* 수평, 수직 배치를 위해 고정 폭을 설정 */
+            }
+            .content { /* section 아래의 nav - main- aside 를 수평으로 배치 */
+                display:flex;
+                flex-direction: row;
+            }
+            .content nav {
+                border-right:1px solid gray; /* flex 에서는 부모 태그의 영역 만큼 공간을 차지하기에 중간에 테두리가 잘리지 않는다. 따라서 한쪽에서만
+                border 값을 지정해주어도 된다. */
+                padding:20px;
+            }
+            .content main {
+                padding:10px;
+            }
+            .content aside {
+                border-left:1px solid gray;
+                padding:20px;
+            }
+            nav, aside { /* nav 와 aside 의 크기는 고정. shrink 를 0 으로 설정하고, basis 를 150px 로 고정함으로써
+                화면의 크기가 줄어들더라도 nav 와 aside 의 크기는 줄어들지 않는다. */
+                flex-basis: 150px;
+                flex-shrink: 0;
+            }
+            footer {
+                border-top: 1px solid gray;
+                text-align: center;
+                padding: 20px;
+            }            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>생활코딩</h1>
+            </header>
+            <section class="content">
+                <nav>
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
+                </nav>
+                <main>
+                    Maecenas a risus id ex mattis auctor. Pellentesque erat eros, tempor quis sodales eget, vestibulum nec dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec cursus enim metus, id sodales odio lacinia at. Donec vitae blandit ipsum, id molestie arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut venenatis augue, ac lobortis metus. Integer lacus diam, euismod congue mollis in, molestie ut mauris. In vitae ligula bibendum, laoreet lacus et, vehicula enim.
+                </main>
+                <aside>
+                    AD
+                </aside>
+            </section>
+            <footer>
+                <a href="https://opentutorials.org">홈페이지</a>
+            </footer>
+        </div>
+    </body>
+</html>
