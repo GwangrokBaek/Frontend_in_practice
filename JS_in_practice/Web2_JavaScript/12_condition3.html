@@ -1,0 +1,39 @@
+<!-- 코드의 기능은 그대로 둔채 중복 코드를 삭제하는 등 코드가 효율적이게 될 수 있도록 개선하는 작업을 리팩토링이라고 한다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <header>
+            <h1><a href="#">WEB</a></h1>
+        </header>
+        <input type="button" value="night" onclick=" // 아래에서 this 를 사용하였기 때문에 굳이 id 를 넣을 필요가 없다.
+        var target = document.querySelector('body');
+        // if(document.querySelector('#night_day').value === 'night') {
+        if (this.value === 'night') { // document.querySelector('#night_day') 는 현재 JS 가 작성되어 있는 태그 자신을 가리킨다. 이때 자기 자신을
+        // 가리키는 키워드를 this 라고 하는데 여기서 this 로 대체하여 훨씬 간결한 코드를 작성할 수 있다.
+            // document.querySelector('body').style.backgroundColor='black';
+            target.style.backgroundColor='black'; // document.querySelector('body') 가 계속 중복되므로 이를 target 이라는 변수로 선언하여
+            // 해당 부분을 다 target 으로 바꿈으로써 중복을 제거할 수 있다.
+            target.style.color='white';
+            this.value='day';
+        } else {
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            this.value='night';
+        }">
+        <nav>
+            <ol>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ol>
+        </nav>
+        <article>
+            <h2>JavaScript</h2>
+            <p>JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.</p>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!-- 이벤트는 자바스크립트와 사용자가 상호작용하는데 있어 핵심적인 역할을 한다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body> <!-- onclick 속성의 값으로는 JS 만이 올 수 있으며, 이때 브라우저는 onclick 속성을 만날 경우, JS 값을 기억하고 있다가 추후에 사용자가
+     버튼을 클릭하면 기억하고 있던 JS 값을 실행시킨다. -->
+        <input type="button" value="hi" onclick="alert('hi')">
+        <!-- onchange 속성은 태그의 내용이 변했을때 발생하는 이벤트이다. -->
+        <input type="text" onchange="alert('changed')">
+        <!-- onkeydown 속성은 해당 태그에서 사용자가 어떠한 키를 눌렀을때 발생하는 이벤트이다. -->
+        <input type="text" onkeydown="alert('key down!')">
+    </body>
+</html>

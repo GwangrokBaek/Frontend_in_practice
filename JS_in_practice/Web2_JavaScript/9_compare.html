@@ -1,0 +1,29 @@
+<!-- JS 에서 같음을 나타내는 비교 연산자는 === 로 표현된다. 이때 ture 및 false 를 출력하는데 여기서 ture 및 false 를 값으로 가지는
+데이터 타입을 Boolean 타입이라고 한다. 비교 연산자에는 === 이외에도 < 와 > 등도 있다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Comparison operators & Boolean</h1>
+        <h2>===</h2>
+        <h3>1===1</h3>
+        <script>
+            document.write(1===1); // true 출력
+        </script>
+        <h3>1===2</h3>
+        <script>
+            document.write(1===2); // false  출력
+        </script>
+        <h3>1&lt;2</h3> <!-- html 에서 부등호는 꺽쇠이기 때문에 부등호를 그대로 사용하지 못하며,  대신 &lt; 로 표현해야 한다. 여기서 lt 는 less than 의 약자이다. -->
+        <script>
+            document.write(1<2); // JS 에서는 부등호를 꺽쇠로 사용하지 않기에, 부등호 그대로를 사용할 수 있다.
+        </script>
+        <h3>1&lt;1</h3>
+        <script>
+            document.write(1<1);
+        </script>
+    </body>
+</html>

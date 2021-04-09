@@ -1,0 +1,60 @@
+<!-- 코드의 기능은 그대로 둔채 중복 코드를 삭제하는 등 코드가 효율적이게 될 수 있도록 개선하는 작업을 리팩토링이라고 한다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var navList = ["HTML", "CSS", "JavaScript"];
+        </script>
+        <header>
+            <h1><a href="#">WEB</a></h1>
+        </header>
+        <section>
+            <input type="button" value="night" onclick="
+                var body = document.querySelector('body').style;
+                var anchors = document.querySelectorAll('a'); // querySelectorAll() 은 괄호안에 해당되는 모든 태그를 배열 형태로 리턴한다.
+                if(this.value === 'night') {
+                    body.backgroundColor = 'black';
+                    body.color = 'white';
+                    this.value = 'day';
+
+                    var i = 0;
+                    while (i < anchors.length) {
+                        anchors[i].style.color='powderblue';
+                        i += 1;
+                    }
+                }
+                else {
+                    body.backgroundColor = 'white';
+                    body.color = 'black';
+                    this.value = 'night';
+
+                    var i = 0;
+                    while (i < anchors.length) {
+                        anchors[i].style.color='blue';
+                        i += 1;
+                    }
+                }">
+        </section>
+        <nav>
+            <ol>
+                <script>
+                    var i = 0;
+                    while (i < navList.length) {
+                        document.write('<li><a href="http://a.com/'+navList[i]+'">'+navList[i]+'</a></li>');
+                        i += 1;
+                    }
+                </script>
+            </ol>
+        </nav>
+        <article>
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
+            </p>
+        </article>
+    </body>
+</html>

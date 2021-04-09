@@ -1,0 +1,37 @@
+<!-- document.querySelector() 는 html 문서에서 특정 태그를 선택할 때 이용된다. 이때 괄호안에 선택자가 위치하게 되는데,
+선택자는 일반 태그 뿐만 아니라 클래스 및 ID 태그도 올 수 있다. CSS 에서 선택자를 사용할때와 마찬가지로 .class #ID 이런식으로 사용하면 된다.
+그리고 해당 선택자의 style 을 변경해주기 위해서는 .style 을 붙이고 backgroundColor 등 원하는 properties 를 선택해주면 된다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><a href="#">WEB</a></h1>
+        </header>
+        <section>
+            <input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white'">
+            <input type="button" value="day" onclick=
+            "document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black'">
+        </section>
+        <nav>
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+        </nav>
+        <article>
+            <h2>JavaScript</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut elit dignissim, faucibus ipsum sit amet, hendrerit diam. Curabitur ultricies libero nisl, quis dapibus quam placerat et. Suspendisse potenti. Sed luctus elementum sem, et mollis arcu ullamcorper eget. Proin maximus felis felis, et cursus odio iaculis eget. Cras in hendrerit massa, facilisis consectetur nibh. Nullam molestie nunc metus, at dictum justo sagittis non. Sed ac justo fringilla nunc sagittis tincidunt et ac lectus. Donec accumsan condimentum luctus.
+            </p>
+        </article>
+    </body>
+</html>
