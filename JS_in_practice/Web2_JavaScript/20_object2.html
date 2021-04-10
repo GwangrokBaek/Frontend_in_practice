@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var target = document.querySelector('body');
+
+            var Body = {
+                setBackgroundColor : function(color) {
+                    target.style.backgroundColor = color;
+                },
+                setColor : function(color) {
+                    target.style.color = color;
+                }
+            }
+
+            var Links = {
+                setColor : function(color) {
+                    var aList = document.querySelectorAll('a');
+                    var i = 0;
+                    while(i < aList.length) {
+                        aList[i].style.color = color;
+                        i += 1;
+                    }    
+                }
+            }
+
+            function anchorColorHandler(color) {
+                var aList = document.querySelectorAll('a');
+                var i = 0;
+                while(i < aList.length) {
+                    aList[i].style.color = color;
+                    i += 1;
+                }
+            }
+
+            function nightDayHandler(self) {
+                if (self.value === 'night') {
+                    Body.setBackgroundColor("black");
+                    Body.setColor("white");
+                    self.value="day";
+
+                    Links.setColor("powderblue");
+                }
+                else {
+                    Body.setBackgroundColor("white");
+                    Body.setColor("black");
+                    self.value="night";
+
+                    Links.setColor("blue");
+                }
+            }
+        </script>
+        <header>
+            <h1><a href="#">WEB</a></h1>
+        </header>
+        <section>
+            <input type="button" value="night" onclick="nightDayHandler(this);">
+        </section>
+        <nav>
+            <ol>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ol>
+        </nav>
+        <article>
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.  
+            </p>
+        </article>
+    </body>
+</html>

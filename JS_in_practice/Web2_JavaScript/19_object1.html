@@ -1,0 +1,41 @@
+<!-- 서로 연관된 함수와 연관된 변수를 그룹핑하여 사용하기 위해 객체를 사용할 수 있다. 이때 배열은 순서를 가지고 저장되지만 그와 달리
+객체는 순서 없이 정보를 저장할 수 있다. 이때 배열은 대괄호를 사용하여 선언하지만, 객체는 중괄호를 (object literal) 사용하여 선언한다.
+이때 객체의 변수를 properties 라고 하고, 객체의 함수를 method 라고 한다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Object</h1>
+        <h2>Create</h2>
+        <script>
+            var coworkers = { // 객체는 key, value 형식으로 값을 저장한다.
+                "programmer" : "egoing", // 문자열 뿐만 아니라, 함수, 배열, 정수 등 다양한 값을 담을 수 있다.
+                "designer" : "leezche" // key 들을 구분할때는 콤마를 사용해준다.
+            };
+            document.write("programmer : "+coworkers.programmer+'</br>'); // dot notation 을 통해 객체의 key 에 접근하여 value 를 가져올 수 있다.
+            document.write("designer : "+coworkers.designer+'</br>');
+            coworkers.bookkeeper = "duru"; // dot notation 을 통해 객체에 정보를 추가할 수 있다.
+            document.write("bookkepper : "+coworkers.bookkeeper+'</br>');
+            coworkers["data scientist"] = "taeho"; // key 에 띄어쓰기가 있는 경우 [] 로 묶어서 접근할 수 있다.
+            document.write("data scientist : "+coworkers["data scientist"]+'</br>');
+        </script>
+        <h2>Iterate</h2>
+        <script>
+            for(var key in coworkers) { // 반복문을 통해 객체에 있는 모든 정보를 출력할 수 있다. 이때 객체에는 순서 정보가 없으므로 순서를 보장하지는 않는다.
+                document.write(key+' : '+coworkers[key]+'</br>');
+            }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            coworkers.showAll = function() { // 인라인 방식으로 함수를 객체의 key 에 대입할 수 있다.
+                for(var key in this) { // 여기서 this 는 showAll 메서드가 소속된 객체를 가리킨다. 즉, coworkers 를 가리킨다.
+                    document.write(key+' : '+coworkers[key]+'</br>');
+                }
+            }
+            coworkers.showAll();
+        </script>
+    </body>
+</html>

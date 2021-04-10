@@ -1,0 +1,51 @@
+<!-- JS 에서도 함수를 사용할 수 있다. 함수를 선언하는 방법은 다음과 같다.
+script 태그 안에 funtion 함수이름() {} 가 함수의 선언부가 되고 이때 중괄호 안에 구현부를 작성해주면 된다.
+다음으로 함수를 이용하고자 하는 위치에서 함수이름을 호출해주면 된다. 예를 들어 onclick="함수이름()" 이런 식으로 호출해주면 된다. -->
+
+<!doctype html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>Function</h1>
+        <h2>Basic</h2>
+        <ul>
+            <script>
+                function two() { // 웹브라우저는 함수 function 을 만날 경우, 이를 기억해두었다가 해당 함수를 호출하는 것을 만나게되면 기억해둔 함수의 구현부를 실행시킨다.
+                    document.write("<li>2-1</li>");
+                    document.write("<li>2-2</li>");
+                }
+                document.write("<li>1</li>");
+                two();
+                document.write("<li>3</li>");
+                two();
+            </script>
+        </ul>
+        <h2>Parameter & Argument</h2>
+        <script>
+            function onePlusOne() {
+                document.write(1+1+'<br>');
+            }
+            onePlusOne();
+            function sum(a, b) { // 함수에 파라미터를 전달할 수 있다.
+                document.write(a+b+'<br>');
+            }
+            function sumColorRed(a, b) {
+                document.write('<div style="color:red;">'+a+b+'</div></br>');
+            }
+            sum(2, 3);
+            sumColorRed(2, 3);
+            sum(3, 4);
+        </script>
+        <h2>Return</h2>
+        <script>
+            function sum2(a, b) { // 함수에서 return 을 사용할 수 있다.
+                return a+b;
+            }
+            document.write(sum2(2, 3)+'</br>');
+            document.write('<div style="color:red;">'+sum2(2, 3)+'</div>');
+            document.write('<div style="font-size:3rem;">'+sum2(2, 3)+'</div>');
+        </script>
+    </body>
+</html>
