@@ -1,0 +1,39 @@
+<!-- HTML 에서 JavaScript 를 로드하는 방법에는 여러가지가 있다.
+1. inline 방식
+2. script 태그 사용
+3. js 파일로 분리
+
+이때 script 파일을 body 태그가 아닌, head 태그에 위치시킬 수도 있다. 하지만, body 태그가 끝나는 지점에 두는 것이 좋다.
+왜냐하면 아래 코드의 경우, script 파일을 head 태그에 위치시킨다면, id 값이 hw 인 element 를 찾는 부분이
+id 값이 hw 인 태그를 선언하기 전에 나오게 되므로, 해당 태그를 찾을 수가 없어서 오류가 발생할 수 있기 때문이다.
+
+이러한 문제점은 window.onload = function() {} 안에 실행하고자 하는 js 코드를 작성하는 것으로 해결할 수 있다.
+window 객체의 onload 메서드는 웹브라우저의 모든 구성요소에 대한 로드가 끝났을 때 브라우저에 의해서 호출되는 메서드이다.
+따라서 실행하고자 하는 js 코드를 onload 메서드에 할당하면 이를 해결할 수 있다.
+
+하지만, script 태그를 head 에 작성할 경우, js 파일에 대한 해석이 끝날때까지 아래 body 태그에 대한 내용을 화면에 표시하지 않는다.
+즉, 렌더링 지연이 발생되는데 사용자 입장에서는 답답함을 느낄 수 있다.
+만약, script 태그를 body 의 마지막에 작성한다면, 웹페이지의 구성요소가 모두 표시된 다음 js 코드를 해석하므로 렌더링이 빨리 수행된다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="button" value="Hello world" onclick="alert('Hello world')"> <!-- inline 방식으로 JavaScript 사용.
+        태그에 직접 자바스크립트를 기술하는 방식이다. 정보와 제어가 섞여 있기 때문에 정보로서의 가치가 떨어질 수 있다. -->
+        <input type="button" id="hw" value="Hello world">
+        <!--
+        <script> // <script> 태그를 사용해서 JavaScript 코드를 삽입하는 방식을 사용할 수 있다. 이를 통해 html 태그와 js 코드를 분리할 수 있다.
+            var hw = document.getElementById('hw'); // element 는 태그와 같은 뜻이다.
+            hw.addEventListener('click', function() {
+                alert('Hello world');
+            })
+        </script>
+        -->
+        <script src="1_javascript.js"></script> <!-- js 를 별도의 파일로 분리할 수 있다. 보다 엄격하게 정보와 제어를 분리할 수 있으며,
+            js 의 재활용성을 높임과 동시에 캐시를 통해서 속도의 향상, 전송량의 경량화를 도모할 수 있다. -->
+    </body>
+</html>
