@@ -1,0 +1,22 @@
+<!-- 자주 사용되는 로직을 재사용할 수 있도록 고안된 소프트웨어를 라이브러리라고 한다.
+jQuery 는 DOM 을 내부에 감추고 이를 보다 쉽게 웹페이지를 조작할 수 있도록 돕는 도구이다. -->
+
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> <!-- url 에 // 은 현재 구동되는 웹페이지의 프로토콜이 http 인 경우,
+        http 가 // 부분을 대체하게 되고 https 인 경우 https 가 대체하게 된다. -->
+        <!-- jQuery 를 사용하기 위해서는 아래와 같이 jQuery 를 HTML 로 로드해야 한다. 이때 위처럼 CDN 을 통해 다운로드 할수도 있다. -->
+        <script>
+            jQuery(document).ready(function($) {
+                $('body').prepend('<h1>Hello world</h1>');
+                // 결과적으로 body 태그를 선택하여 body 태그 부분의 맨앞에 <h1>Hello world</h1> 코드가 작성된다. 즉, 여기서는 body 태그와 script 태그
+                // 사이에 해당 부분을 작성한다.
+                // 이때 jQuery(document).ready(function($){}) 로 실행하고자 하는 부분을 감싸는 것이 이상적이다.
+                // 요즘은 $(document).ready(function(){}) 이렇게 감싸곤 한다.
+            });
+        </script>
+    </body>
+</html>

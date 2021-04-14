@@ -1,0 +1,82 @@
+<!-- jQuery 를 사용하여 제어 대상을 찾기
+jQuery 를 이용하면 DOM 을 사용하는 것 보다 훨씬 효율적으로 필요한 객체를 조회할 수 있다. jQuery 는 객체를 조회할 때 CSS 선택자를 이용한다.
+
+jQuery 의 기본문법
+jQuery 의 기본문법은 단순하고 강력하다.
+$('li').css('color', 'red');
+$() 는 jQuery 의 함수이다. 이 함수의 인자로 CSS 선택자 (li) 를 전달하면 jQuery 객체라는 것을 리턴한다. 이 jQuery 객체는
+선택자에 해당하는 엘리먼트를 제어하는 다양한 메서드와 프로퍼티를 가지고 있다. 위의 그림에서 CSS 는 선택자에 해당하는 객체들의 style 에서 color 를 red 로 변경한다. -->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #demo{
+                width:200px;
+                float:left;
+                margin-top:120px;
+            }
+            #execute{
+                float:left;
+                margin:0;
+                font-size:0.9em;
+            }
+            #execute{
+                padding-left:5px;
+            }
+            #execute li {
+                list-style:none;
+            }
+            #execute pre {
+                border:1px solid gray;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="demo">
+            <li class="active">HTML</li>
+            <li id="active">CSS</li>
+            <li class="active">JavaScript</li>
+        </ul>
+        <ul id="execute">
+            <li>
+                <pre> <!-- pre 태그안에서는 <br> 태그와 &npsp 를 사용하지 않더라도 Enter 및 공백이 표시된다. -->
+                    var lis = document.getElementsByTagName('li');
+                    for (var i = 0; i &lt; lis.length; i++) {
+                        lis[i].style.color='red';
+                    }
+                </pre>
+                <pre>
+                    $('li').css('color', 'red')             
+                </pre>
+                <input type="button" value="execute" onclick="$('li').css('color', 'red');"/>
+            </li>
+            <li>
+                <pre>
+                    var lis = document.getElementsByClassName('active');
+                    for (var i = 0; i&lt;lis.length; i++) {
+                        lis[i].style.color='red';
+                    }
+                </pre>
+                <pre>
+                    $('.active').css('color', 'red')
+                </pre>
+                <input type="button" value="execute" onclick="$('.active').css('color', 'red');"/>
+            </li>
+            <li>
+                <pre>
+                    var li = document.getElementById('active');
+                    li.style.color='red';
+                    li.style.textDecoration='underline';
+                </pre>
+                <pre>
+                    $('#active').css('color', 'red').css('textDecoration', 'underline');
+                </pre>
+                <input type="button" value="execute" onclick="$('#active').css('color', 'red').css('textDecoration', 'underline');"/>
+                <!-- 이때 css() 메서드 또한 jQuery 객체를 리턴하므로 체이닝을 통해 연속적으로 css() 메서드를 사용할 수 있다. -->
+            </li>
+        </ul>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    </body>
+</html>

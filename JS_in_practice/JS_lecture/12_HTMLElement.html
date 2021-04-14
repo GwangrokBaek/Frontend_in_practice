@@ -1,0 +1,58 @@
+<!-- HTMLElement
+getElement* 메서드를 통해서 원하는 객체를 조회했다면 이 객체들을 대상으로 구체적인 작업을 처리해야 한다.
+이를 위해서는 획득한 객체가 무엇인지를 알아야 한다. 그래야 적절한 메서드나 프로퍼티를 사용할 수 있다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li id="active">JavaScript</li>
+        </ul>
+        <script>
+            var li = document.getElementById('active');
+            console.log(li.constructor.name);
+            var lis = document.getElementsByTagName('li');
+            console.log(lis.constructor.name);
+            /*
+                객체의 이름을 알기 위해서는 해당 객체의 constructor 의 name 을 확인하면 된다.
+                이때 실행결과는 다음과 같다.
+                document.getElementById 의 리턴 데이터 타입은 HTMLLIElement (여기서 중간에 LI 는 해당 객체가 li 엘리먼트이기 때문에 HTMLLIElement 라고 출력된다.)
+                document.getElementsByTagName 의 리턴 데이터 타입은 HTMLCollection 이다.
+
+                즉, 실행결과가 하나인 경우에는 HTMLElement, 복수인 경우에는 HTMLCollection 을 리턴한다.
+            */
+        </script>
+        <input type="button" id="button" value="button" />
+        <script>
+            var target = document.getElementById('list');
+            console.log(target.constructor.name);
+
+            var target = document.getElementById('anchor');
+            console.log(target.constructor.name);
+
+            var target = document.getElementsById('button');
+            console.log(target.constructor.name);
+            /*
+                위 코드를 실행해보면 각각 HTMLLIElement, HTMLAnchorElement, HTMLInputElement 가 출력되는데,
+                엘리먼트의 종류에 따라 리턴되는 객체가 다르다는 것을 확인할 수 있다.
+                이때 각 엘리먼트 객체에 따라 프로퍼티가 서로 다르다. 따라서 서로 다른 기능을 수행한다. 하지만 모든 엘리먼트들은 HTMLElement 를 상속받고 있다.
+            */
+        </script>
+        <!-- 
+            DOM Tree
+            모든 엘리먼트는 HTMLElement 의 자식이다. 따라서 HTMLElement 의 프로퍼티를 똑같이 가지고 있다. 동시에 엘리먼트의 성격에 따라서
+            자신만의 프로퍼티를 가지고 있는데 이것은 엘리먼트의 성격에 따라서 달라진다.
+            HTMLElement 는 Element 의 자식이고 Element 는 Node 의 자식이다. Node 는 Object 의 자식이다. 이러한 관계를 DOM Tree 라고 한다.
+            
+            Node 아래에 Document, CharacterData, Element, Attr 이 있고,
+            Document 아래에 HTMLDocument
+            CharacterData 아래에 Text, Comment
+            Element 아래에 HTMLElement 가 있고 그 아래에 HTMLHeadElement, HTMLBodyElement, HTMLTitleElement 등등이 있다.
+         -->
+    </body>
+</html>

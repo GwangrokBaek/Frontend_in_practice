@@ -1,0 +1,33 @@
+<!-- HTMLCollection
+HTMLCollection 은 리턴 결과가 복수인 경우에 사용하게 되는 객체이다. 유사배열로 배열과 비슷한 사용방법을 가지고 있지만 배열은 아니다.
+이때 HTMLCollecion 의 목록은 실시간으로 변경된다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li id="active">JavaScript</li>
+        </ul>
+        <script>
+            console.group('before'); // console.group 을 사용하면 group 부터 groupEnd 사이에 나온 console.log 를 그룹핑하여
+            // 시각적으로 이들을 묶어 보여준다.
+            var lis = document.getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                console.log(lis[i]);
+            }
+            console.groupEnd();
+            
+            console.group('after');
+            lis[1].parentNode.removeChild(lis[1]); // ul 태그의 자식 태그 중 두 번째 태그를 삭제.
+            for (var i = 0; i < lis.length; i++) {
+                console.log(lis[i]); // getElement* 메서드로 재조회하지 않더라도 자동으로 갱신된다.
+            }
+            console.groupEnd();
+        </script>
+    </body>
+</html>

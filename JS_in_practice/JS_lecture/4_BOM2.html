@@ -5,7 +5,7 @@ HTML 은 form 을 통해서 사용자와 커뮤니케이션 할 수 있는 기�
 
 alert
 경고창이라고 부른다. alert 는 사용자에게 정보를 제공하거나, 디버깅 등의 용도로 많이 사용한다.
-하지만, 최근에는 웹 개발자 도구에서 console 기능을 제공하기에 보통 console.log 를 사용한다.
+하지만, 최근에는 웹 개발자 도구에서 console 기능을 제공하기에 보통 console.log 를 사용하여 디버깅을 수행한다.
 이때 경고창이 실행되고 있는 동안에는 그 다음 로직이 동작하지 않고 정지된다. 이는 confirm, prompt 에서도 마찬가지이다.
 
 confirm
@@ -33,7 +33,7 @@ prompt 는 사용자로부터 입력값을 받는 창을 띄워준다. 이때 �
                 }
             }
         </script>
-        <input type="button" value="prompt" onclick="func_prompt()">
+        <input type="button" value="prompt" onclick="func_prompt()"> <!-- prompt -->
         <script>
             function func_prompt() {
                 if(prompt('id?') === 'egoing') { // prompt 메서드

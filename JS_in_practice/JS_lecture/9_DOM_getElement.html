@@ -1,0 +1,81 @@
+<!-- DOM 은 Document Object Model 의 약자로 웹페이지를 자바스크립트로 제어하기 위한 객체 모델을 의미한다.
+window 객체의 document 프로퍼티를 통해서 사용할 수 있다. window 객체가 창을 의미한다면 document 객체는 윈도우에 로드된 문서를
+의미한다고 할 수 있다.
+
+제어 대상 찾기
+문서를 자바스크립트로 제어하려면 제어의 대상에 해당되는 객체를 찾는 것이 제일 먼저 할 일이다. 문서 내에서 객체를 찾는 방법은 document 객체의 메서드를 이용한다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <ul>
+            <li>HTML</li>
+            <li class="active">CSS</li>
+            <li class="active">JavaScript</li>
+        </ul>
+        <ul>
+            <li>HTML</li>
+            <li id="active">CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <script>
+            // document.getElementsByTagName()
+            // 문서 내에서 특정 태그에 해당되는 객체를 찾는 방법은 여러가지가 있다. getElementsByTagName 은 인자로 전달된 태그명에
+            // 해당되는 객체들을 찾아서 그 리스트를 NodeList 라는 유사 배열에 담아서 반환한다. 이때 NodeList 는 배열은 아니지만
+            // length 와 배열접근연산자를 사용해서 엘리먼트를 조회할 수 있다.
+            var lis = document.getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.color='red';
+            }
+
+            // 만약 전체 li 태그가 아닌 ul 태그 아래에 있는 li 객체를 지정하고 싶다면 아래와 같이 사용할 수 있다.
+            var ul = document.getElementsByTagName('ul')[0];
+            var lis = ul.getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.color='red';
+            }
+
+            // document.getElementyByClassName()
+            // class 속성의 값을 기준으로 객체를 조회할 수도 있다.
+            var lis = document.getElementsByClassName('active');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.color='red';
+            }
+
+            // document.getElementById()
+            // id 값을 기준으로 객체를 조회하는 방법은 아래와 같다. 성능면에서 가장 우수하다.
+            // 이때 특정 id 에 해당되는 태그 **하나**를 리턴한다. 애초에 id 는 유일무이한 태그에 지정하는 것이기에 하나를 리턴하는 것이다.
+            var li = document.getElementById('active');
+            li.style.color='red';
+
+            // css 선택자의 문법을 이용해서 객체를 조회할 수도 있다.
+            // document.querySelector()
+            var li = document.querySelector('li'); // li 태그 중 처음에 나오는 하나를 리턴한다.
+            li.style.color='red'
+            var li = document.querySelector('.active'); // active 라는 이름을 가진 클래스 태그 중 처음에 나오는 하나를 리턴한다.
+            li.style.color='blue'
+
+            // document.querySelectorAll()
+            // querySelector 와 기본적인 동작방법은 같지만 모든 객체를 조회한다는 점이 다르다.
+
+            var lis = document.querySelectorAll('li');
+            for (var name in lis) {
+                lis[name].style.color='blue';
+            }
+        </script>
+    </body>
+</html>
