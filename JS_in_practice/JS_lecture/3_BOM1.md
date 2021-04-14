@@ -13,6 +13,7 @@ Window 객체는 식별자 window 를 통해 접근할 수 있다. 이때 window
 window.document, window.location, window.array 등으로 접근할 수 있는데, 전역 객체이므로 생략도 가능하다.<br><br>
 
 따라서 아래처럼 window 를 생략하고도 사용가능하다.<br>
+
 '''
 window.alert('Hello world');
 alert('Hello world');
