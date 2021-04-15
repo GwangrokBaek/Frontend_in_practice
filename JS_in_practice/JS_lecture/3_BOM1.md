@@ -13,7 +13,9 @@ Window 객체는 식별자 window 를 통해 접근할 수 있다. 이때 window
 window.document, window.location, window.array 등으로 접근할 수 있는데, 전역 객체이므로 생략도 가능하다.<br><br>
 
 따라서 아래처럼 window 를 생략하고도 사용가능하다.<br>
-'''
+
+
+```
 window.alert('Hello world');
 alert('Hello world');
 
@@ -24,7 +26,7 @@ alert(window.a);
 var a = {id:1};
 alert(a.id);
 alert(window.a.id);
-'''
+```
 
 
 따라서 사용자 정의 함수 및 브라우저가 제공하는 내장함수와 전역변수는 모두 윈도우라고 하는 객체의 메서드이고, 변수이며 즉, 객체를 만든다는 것은
