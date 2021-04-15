@@ -1,0 +1,46 @@
+<!-- Text 객체
+텍스트 객체는 텍스트 노드에 대한 DOM 객체로 CharacterData 를 상속받는다.
+아래는 텍스트 노드를 찾는 코드이다. 주목할 것은 DOM 에서는 공백이나 줄바꿈도 텍스트 노드라는 점이다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="target1"><span>Hello world</span></p>
+        <p id="target2">
+            <span>Hello world</span>
+        </p>
+        <script>
+            var t1 = document.getElementById('target1').firstChild;
+            var t2 = document.getElementById('target2').firstChild;
+
+            console.log(t1.firstChild.nodeValue); // Hello world 출력 (줄바꿈이 없으므로 firstChild 는 텍스트 노드인 Hello world 이다.)
+            try {
+                console.log(t2.firstChild.nodeValue); // TypeError 발생 (줄바꿈이 있으므로 t2 는 텍스트 노드인 줄바꿈이다. 이때 줄바꿈에게는 자식이 없다.)
+            } catch (e) {
+                console.log(e);
+            }
+            console.log(t2.nextSibling.firstChild.nodeValue); // Hello world 출력 (형제 노드인 span 태그의 자식은 텍스트 노드인 Hello world 이다.)
+            /*
+                주요기능
+
+                값
+                텍스트 노드의 값을 가져오는 API
+                * data
+                * nodeValue
+                
+                조작
+                * appendData()
+                * deleteData()
+                * insertData()
+                * replaceData()
+                * subStringData()
+                
+                생성
+                * document.createTextNode()
+            */
+        </script>
+    </body>
+</html>

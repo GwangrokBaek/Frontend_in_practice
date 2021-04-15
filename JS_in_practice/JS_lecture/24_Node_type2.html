@@ -1,0 +1,36 @@
+<!-- 재귀 함수와 노드 종류 API 를 이용해서 노드를 처리하는 예제이다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body id="start">
+        <ul>
+            <li><a href="./532">html</a></li>
+            <li><a href="./533">css</a></li>
+            <li><a href="./534">JavaScript</a>
+                <ul>
+                    <li><a href="./535">JavaScript Core</a></li>
+                    <li><a href="./536">DOM</a></li>
+                    <li><a href="./537">BOM</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            function traverse(target, callback) {
+                if(target.nodeType === 1) { // Node Type 이 ELEMENT_NODE 인 경우
+                    //if(target.nodeName === 'A') Node Name 이 A 인 경우 (anchor 태그인 경우)
+                    callback(target); // 해당 엘리먼트의 이름을 출력.
+                    var c = target.childNodes; // 해당 노드의 자식 노드들을 유사배열 형태로 c 에 저장.
+                    for (var i = 0; i < c.length; i++) {
+                        traverse(c[i], callback); // 각 자식 노드들을 순회하며 재귀함수로 다시 traverse 호출
+                    }
+                }
+            }
+            traverse(document.getElementById('start'), function(elem) {
+                console.log(elem);
+            });
+        </script>
+    </body>
+</html>

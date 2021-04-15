@@ -1,0 +1,47 @@
+<!-- 스크롤
+
+문서의 스크롤 값은 scrollLeft 와 scrollTop 프로퍼티를 이용하여 변경할 수 있다.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            div {
+                border: 50px solid #1065e6;
+                padding: 50px;
+                margin: 50px;
+            }
+            #target {
+                width:100px;
+                height:2000px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" id="scrollBtn" value="scroll(0, 1000)" />
+        <script>
+            document.getElementById('scrollBtn').addEventListener('click', function() {
+                window.scrollTo(0, 1000); // scrollTo 의 첫 번째 인자는 x, 두 번째 인자는 y 를 의미한다.
+                // 이는 page 와의 offset 을 기준으로 y 쪽으로 1000 만큼 스크롤을 이동하라는 의미이다.
+            })
+        </script>
+        <div>
+            <div id="target">
+                Coding
+            </div>
+        </div>
+        <script>
+            /*
+                스크린의 크기
+                스크린의 크기에는 모니터의 크기와 브라우저 뷰포트의 크기가 있다. 아래 코드를 통해 이를 알아낼 수 있다.
+            */
+            console.log('window.innerWidth: ', window.innerWidth, 'window.innerHeight: ', window.innerHeight); // window.inner* 는 뷰포트의 크기를 나타낸다.
+            console.log('screen.width: ', screen.width, 'screen.height: ', screen.height); // screen.* 은 스크린 (모니터 해상도) 의 크기를 나타낸다.
+        </script>
+    </body>
+</html>

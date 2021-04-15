@@ -1,0 +1,62 @@
+<!-- 조작 API
+
+텍스트 노드가 상속 받은 CharacterData 객체는 문자를 제어할 수 있는 다양한 API 를 제공한다. 아래는 조작과 관련된 API 들의 목록이다.
+
+* appendData()
+* deleteData()
+* insertData()
+* replaceData()
+* substringData()
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #target {
+                font-size:77px;
+                font-family: georgia;
+                border-bottom: 1px solid black;
+                padding-bottom: 10px;
+            }
+            
+            p {
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="target">Coding everybody!</p>
+        <p> data : <input type="text" id="datasource" value="JavaScript" /></p>
+        <p>   start :<input type="text" id="start" value="5" /></p>
+        <p> end : <input type="text" id="end" value="5" /></p>
+        <p><input type="button" value="appendData(data)" onclick="callAppendData();" /></p>
+        <p><input type="button" value="deleteData(start, end)" onclick="callDeleteData();" /></p>
+        <p><input type="button" value="insertData(start, data)" onclick="callInsertData();" /></p>
+        <p><input type="button" value="replaceData(start, end, data)" onclick="callReplaceData();" /></p>
+        <p><input type="button" value="substringData(start, end)" onclick="callSubstringData();" /></p>
+
+        <script>
+            var target = document.getElementById('target').firstChild; // 텍스트 노드인 Coding everybody 를 가져온다.
+            var data = document.getElementById('datasource');
+            var start = document.getElementById('start');
+            var end = document.getElementById('end');
+            
+            function callAppendData() {
+                target.appendData(data.value); // 텍스트 노드의 값 뒤쪽에 인자를 추가한다.
+            }
+            function callDeleteData() {
+                target.deleteData(start.value, end.value); // 첫 번째 인자부터 두 번째 인자까지의 텍스트를 삭제한다. 이때 위치는 0 부터 시작한다.
+            }
+            function callInsertData() {
+                target.insertData(start.value, data.value); // 첫 번째 인자의 위치에 두 번째 인자의 값을 삽입한다.
+            }
+            function callReplaceData() {
+                target.replaceData(start.value, end.value, data.value); // 첫 번째 인자부터 두 번째 인자까지의 텍스트를 세 번째 인자의 값으로 교체한다.
+            }
+            function callSubstringData() {
+                alert(target.substringData(start.value, end.value)); // 첫 번째 인자부터 두 번째 인자까지의 텍스트를 리턴한다.
+            }
+        </script>
+    </body>
+</html>

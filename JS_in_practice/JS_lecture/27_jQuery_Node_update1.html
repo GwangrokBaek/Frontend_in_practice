@@ -1,0 +1,28 @@
+<!-- jQuery 노드 변경 API
+jQuery 에서 노드를 제어하는 기능은 주로 Manipulation 카테고리에 속해 있다. -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="target">
+            content1
+        </div>
+        <div class="target">
+            content2
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+                before 는 해당 태그 앞에, after 는 해당 태그 뒤에 노드를 추가한다.
+                prepend 는 해당 태그의 하위 태그 중 맨 앞에, append 는 해당 태그의 하위 태그 중 맨 뒤에 노드를 추가한다.
+            */
+            $('.target').before('<div>before</div>');
+            $('.target').after('<div>after</div>');
+            $('.target').prepend('<div>prepend</div>');
+            $('.target').append('<div>append</div>');
+        </script>
+    </body>
+</html>

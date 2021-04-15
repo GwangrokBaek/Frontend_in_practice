@@ -1,0 +1,58 @@
+<!-- 속성 API
+속성은 HTML 에서 태그명만으로는 부족한 부가적인 정보라고 할 수 있다. 이때 속성을 제어하는 API 는 아래와 같다.
+* Element.getAttribute(name)
+* Element.setAttribute(name, value)
+* Element.hasAttribute(name)
+* Element.removeAttribute(name) -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <a id="target" href="http://opentutorials.org">opentutorials</a>
+        <script>
+            var t = document.getElementById('target');
+            console.log(t.getAttribute('href')); // href 속성에 적혀있는 값인 http://opentutorials.org 를 그대로 리턴한다.
+            t.setAttribute('title', 'opentutorials.org'); // title 속성의 값을 설정한다. 이때 title 속성이 존재하지 않으면 이를 추가한다.
+            console.log(t.hasAttribute('title')); // title 속성의 존재여부를 확인하며, 이때 true 를 리턴한다.
+            t.removeAttribute('title'); // title 속성을 제거한다.
+            console.log(t.hasAttribute('title')); // title 속성의 존재여부를 확인하며, 이때 false 를 리턴한다.
+        </script>
+
+        <!-- 모든 엘리먼트의 (HTML) 속성은 (JavaScript) 객체의 속성과 프로퍼티로 제어가 가능하다. -->
+        <script>
+            var target = document.getElementById('target');
+            // attribute 방식
+            target.setAttribute('class', 'important');
+            // property 방식
+            target.className = 'important';
+
+            /*
+            setAttribute('clas', 'important') 와 className = 'important' 는 같은 결과를 만든다. 하지만 setAttribute 의 경우,
+            attribute 방식이라 부르고, className 은 property 방식이라고 한다. property 방식은 좀 더 간편하고 속도도 빠르지만, 실제
+            html 속성의 이름과 다른 이름을 갖는 경우가 있다. 이는 자바스크립트의 키워드 규칙 때문이다.
+
+            HTML attribute - 자바스크립트 Property
+            class - className
+            readonly - readOnly
+            rowspan - rowSpan
+            colspan - colSpan
+            usermap - userMap
+            frameborder - frameBorder
+            for - htmlFor
+            maxlength - maxLength
+            */
+        </script>
+        <a id="target2" href="16_identifier.html">opentutorials</a>
+        <script>
+            // 심지어 아래처럼 속성과 프로퍼티는 리턴하는 값이 다를수도 있다.
+            // 현재 웹페이지가 http://localhost/16_identifier.html 일 때
+            var target2 = document.getElementById('target2');
+            console.log('target2.href', target2.href); // 프로퍼티로 접근하면 절대경로인 http://localhost/16_identifier.html 를 출력한다.
+            console.log('target2.getAttribute("href")', target2.getAttribute('href')); // 속성을 통해 접근하면 a 태그의 href 속성에 기입된
+            // 16_identifier.html 를 그대로 출력한다.
+        </script>
+    </body>
+</html>

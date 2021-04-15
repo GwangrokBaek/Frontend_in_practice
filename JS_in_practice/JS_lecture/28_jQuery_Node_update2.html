@@ -1,0 +1,68 @@
+<!-- jQuery 노드 변경 API -->
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="target" id="target1">
+            target 1
+        </div>
+        <div class="target" id="target2">
+            target 2
+        </div>
+
+        <div id="source">source</div>
+
+        <input type="button" value="remove target 1" id="btn1" />
+        <input type="button" value="empty target 2" id="btn2" /><br/>
+        <input type="button" value="replaceAll target 1" id="btn3" />
+        <input type="button" value="replaceWith target 2" id="btn4" /><br/>
+        <input type="button" value="clone replaceAll target 1" id="btn5" />
+        <input type="button" value="clone replaceWith target 2" id="btn6" /><br/>
+        <input type="button" value="append source to target 1" id="btn7" />
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+                제거
+                제거와 관련된 API 는 remove 와 empty 가 있다. remove 는 선택된 엘리먼트를 제거하는 것이고,
+                empty 는 선택된 엘리먼트의 텍스트 노드를 제거하는 것이다.
+            */
+            $('#btn1').click(function() {
+                $('#target1').remove();
+            })
+            $('#btn2').click(function() {
+                $('#target2').empty();
+            })
+            /*
+                바꾸기
+                replaceAll 과 replaceWith 는 모두 노드의 내용을 교체하는 API 이다. replaceWith 가 제어 대상을
+                먼저 지정하는 것에 반해서 replaceAll 은 제어 대상을 인자로 전달한다.
+            */
+            $('#btn3').click(function() {
+                $('<div>replaceAll</div>').replaceAll('#target1');
+            })
+            $('#btn4').click(function() {
+                $('#target2').replaceWith('<div>replaceWith</div>');
+            })
+            /*
+                복사
+                clone() 메서드를 사용해서 노드를 복사할 수 있다.
+            */
+            $('#btn5').click(function() {
+                $('#source').clone().replaceAll('#target1'); // 잘라내기 - 붙여넣기를 하고싶다면 clone() 을 빼주면된다.
+            })
+            $('#btn6').click(function() {
+                $('#target2').replaceWith($('#source').clone());
+            })
+            /*
+                이동
+                dom manipulation API 의 인자로 특정 노드를 선택하면 이동의 효과가 난다.
+            */
+            $('#btn7').click(function() {
+                $('#target1').append($('#source'));
+            })
+        </script>
+    </body>
+</html>
