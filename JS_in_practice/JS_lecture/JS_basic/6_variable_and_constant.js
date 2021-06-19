@@ -7,7 +7,7 @@
     const name = 'Mark';
     console.log(name);
 }
-console.log(name); // 블록 밖이라 에러 발생
+console.log(name); // 블록 안에서 선언한 상수를 블록 밖에서 사용해서 에러 발생
 
 // 밖에서 안으로
 let age = 37;
@@ -15,7 +15,7 @@ let age = 37;
     age++;
     console.log(age);
 }
-console.log(age); // 블록 밖에서 선언하였으므로 안에서 사용 가능
+console.log(age); // 블록 밖에서 선언한 변수는 블록 안에서 사용 가능
 
 // 중첩
 {
