@@ -60,7 +60,7 @@ var c = 0;
     console.log(d);
 }
 
-console.log(d); // d가 var 변수가 아닌, let 이나 const의 경우,
+console.log(d); // d가 var 변수가 아닌, let 이나 const인 경우,
 // 블록 안에서 선언되었으므로, 블록 밖에서 사용 불가능.
 // 하지만, var 변수는 블록 스코프가 아닌 함수 스코프이기에 블록과는 상관없어서
 // 블록 밖에서도 사용 가능하다.
