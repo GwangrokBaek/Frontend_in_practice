@@ -69,7 +69,7 @@
                 alert('Hello world, '+event.target.value);
             });
             
-            // 위 방식은 IE8 이하에서는 호환되지 않는다. 따라서 IE 에서는 attachEvent 메서드를 사용해야 한다.
+            // 위 방식은 IE8 이하에서는 호환되지 않는다. 따라서 IE 에서는 attachEvent 메서드를 사용해야 하므로 다음과 같이 기능 테스트를 작성해주어야 한다.
             var t = document.getElementById('target6');
             if(t.addEventListener) {
                 t.addEventListener('click', function(event) { // addEventListener 방식은 이벤트 타입으로 click 만 명시해줘도 된다.
